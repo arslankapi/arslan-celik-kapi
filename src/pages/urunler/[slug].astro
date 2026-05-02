@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 
@@ -42,7 +42,7 @@ const relatedProducts = (await getCollection("products", ({ data }) => !data.dra
       <nav class="header-links" aria-label="Ana menü">
         <a class="active" href="/urunler/">Ürünler</a>
         <a href="/projeler/">Projeler</a>
-        <a href="#">Hakkımızda</a>
+        <a href="/hakkimizda/">Hakkımızda</a>
         <a href="/blog/">Blog</a>
         <a href="/iletisim/">İletişim</a>
       </nav>
@@ -170,3 +170,4 @@ const relatedProducts = (await getCollection("products", ({ data }) => !data.dra
     }
   </main>
 </BaseLayout>
+

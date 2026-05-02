@@ -1,0 +1,103 @@
+﻿---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const whatsappQuoteUrl =
+  "https://wa.me/905326470613?text=Merhaba%2C%20Arslan%20%C3%87elik%20Kap%C4%B1%20i%C3%A7in%20teklif%20almak%20istiyorum.";
+---
+
+<BaseLayout title="Hakkımızda | Arslan Çelik Kapı" description="Arslan Çelik Kapı üretim yaklaşımı, ekip yapısı ve kalite anlayışı.">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">AK</span>
+        <span class="logo-text">
+          <span class="brand">ARSLAN ÇELİK KAPI</span>
+          <span class="sub">Özel Ölçü Üretim</span>
+        </span>
+      </a>
+      <nav class="header-links" aria-label="Ana menü">
+        <a href="/urunler/">Ürünler</a>
+        <a href="/projeler/">Projeler</a>
+        <a class="active" href="/hakkimizda/">Hakkımızda</a>
+        <a href="/blog/">Blog</a>
+        <a href="/iletisim/">İletişim</a>
+      </nav>
+      <a class="btn-primary" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">Teklif Al</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="hero-label">Kurumsal</span>
+        <h1>Arslan Çelik Kapı <span>Hakkında</span></h1>
+        <p>Özel ölçü üretim, proje bazlı yaklaşım ve sürdürülebilir kalite odağıyla konut ve ticari yapılar için kapı çözümleri geliştiriyoruz.</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <article class="about-card">
+            <h2>Biz Kimiz?</h2>
+            <p>
+              Arslan Çelik Kapı, çelik kapı, yangın kapısı ve bina giriş kapısı üretiminde proje ihtiyaçlarını teknik doğrulukla
+              birleştiren bir üretim ekibidir. Her projede ölçü, kullanım yoğunluğu ve estetik beklentiyi birlikte ele alırız.
+            </p>
+            <p>
+              Müşterilerimize tek bir model değil, sahaya ve yapıya uygun doğru çözümü sunmayı hedefleriz. Üretimden montaja kadar
+              süreç takibini şeffaf biçimde yürütürüz.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <h2>Üretim Yaklaşımımız</h2>
+            <div class="about-list">
+              <div class="about-list-item">
+                <strong>Keşif ve Ölçü</strong>
+                <span>Uygulama öncesi teknik gereksinimleri netleştiriyoruz.</span>
+              </div>
+              <div class="about-list-item">
+                <strong>Model ve Malzeme</strong>
+                <span>Kullanım senaryosuna göre gövde, panel ve aksesuar seçimi yapıyoruz.</span>
+              </div>
+              <div class="about-list-item">
+                <strong>Üretim ve Kontrol</strong>
+                <span>Her ürün teslim öncesi kalite kontrol sürecinden geçer.</span>
+              </div>
+              <div class="about-list-item">
+                <strong>Montaj ve Destek</strong>
+                <span>Saha uygulamasını planlı ilerletip teslim sonrası desteği sürdürüyoruz.</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <strong>10+ Yıl</strong>
+            <span>Sektör deneyimi</span>
+          </div>
+          <div class="about-stat">
+            <strong>500+</strong>
+            <span>Tamamlanan proje</span>
+          </div>
+          <div class="about-stat">
+            <strong>3 Ana Kategori</strong>
+            <span>Çelik, yangın, bina giriş kapısı</span>
+          </div>
+          <div class="about-stat">
+            <strong>%100</strong>
+            <span>Ölçüye özel üretim odağı</span>
+          </div>
+        </div>
+
+        <div class="about-cta">
+          <h3>Projeniz için birlikte doğru modeli belirleyelim.</h3>
+          <a class="btn-primary" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">WhatsApp ile İletişime Geç</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+

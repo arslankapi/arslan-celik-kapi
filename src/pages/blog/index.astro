@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
@@ -23,7 +23,7 @@ const blogPosts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
       <nav class="header-links" aria-label="Ana menü">
         <a href="/urunler/">Ürünler</a>
         <a href="/projeler/">Projeler</a>
-        <a href="#">Hakkımızda</a>
+        <a href="/hakkimizda/">Hakkımızda</a>
         <a class="active" href="/blog/">Blog</a>
         <a href="/iletisim/">İletişim</a>
       </nav>
@@ -76,3 +76,4 @@ const blogPosts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
     </section>
   </main>
 </BaseLayout>
+
