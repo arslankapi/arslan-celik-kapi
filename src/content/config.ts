@@ -22,7 +22,7 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     excerpt: z.string(),
-    publishedAt: z.string(),
+    publishedAt: z.union([z.string(), z.date()]).transform((v) => (typeof v === "string" ? v : v.toISOString().slice(0, 10))),
     cover: z.string(),
     draft: z.boolean().default(false),
   }),
@@ -47,3 +47,4 @@ export const collections = {
   blog,
   projects,
 };
+
