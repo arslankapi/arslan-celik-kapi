@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaydırmalı Kapı Ürünleri Bölümü</title>
+  <style>
+    :root {
+      --bg: #11100e;
+      --text: #f5efe6;
+      --muted: rgba(245, 239, 230, 0.68);
+      --line: rgba(255, 255, 255, 0.12);
+      --card-gap: 8px;
+      --offset-step: 28px;
+      --section-height: 720px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .products-section {
+      width: min(1280px, 100%);
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 12px;
+      line-height: 1;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #b88956;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(36px, 5vw, 76px);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section-text {
+      max-width: 360px;
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .door-gallery {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--card-gap);
+      height: calc(var(--section-height) + var(--offset-step) * 2);
+      overflow: visible;
+    }
+
+    .door-card {
+      position: relative;
+      display: block;
+      height: var(--section-height);
+      overflow: hidden;
+      isolation: isolate;
+      text-decoration: none;
+      color: inherit;
+      background: #222;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      transform: translateY(var(--shift));
+    }
+
+    .door-card:nth-child(1) { --shift: 0px; }
+    .door-card:nth-child(2) { --shift: var(--offset-step); }
+    .door-card:nth-child(3) { --shift: calc(var(--offset-step) * 2); }
+
+    .door-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      filter: grayscale(18%) brightness(0.72) contrast(1.08) saturate(0.82);
+      transform: scale(1.035);
+      transition: transform 700ms ease, filter 700ms ease;
+    }
+
+    .door-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0.24) 45%, rgba(0,0,0,0.08)),
+        radial-gradient(circle at 50% 8%, rgba(255,255,255,0.18), transparent 34%);
+      pointer-events: none;
+    }
+
+    .door-card::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      z-index: 2;
+      border: 1px solid rgba(255,255,255,0.18);
+      opacity: 0;
+      transform: scale(0.985);
+      transition: opacity 450ms ease, transform 450ms ease;
+      pointer-events: none;
+    }
+
+    .door-card:hover img {
+      transform: scale(1.09);
+      filter: grayscale(0%) brightness(0.88) contrast(1.06) saturate(1);
+    }
+
+    .door-card:hover::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .door-content {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 26px;
+      z-index: 3;
+      display: grid;
+      gap: 10px;
+    }
+
+    .door-index {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.26);
+      border-radius: 999px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.82);
+      backdrop-filter: blur(8px);
+      background: rgba(0,0,0,0.18);
+    }
+
+    .door-content h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 3vw, 46px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+    .door-content p {
+      max-width: 320px;
+      margin: 0;
+      color: rgba(255,255,255,0.76);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .door-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      color: #f7d7ad;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .door-link span {
+      transition: transform 350ms ease;
+    }
+
+    .door-card:hover .door-link span {
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 900px) {
+      :root {
+        --section-height: 560px;
+        --offset-step: 0px;
+        --card-gap: 10px;
+      }
+
+      .page {
+        padding: 18px;
+        align-items: start;
+      }
+
+      .section-top {
+        display: block;
+        margin-bottom: 22px;
+      }
+
+      .section-text {
+        margin-top: 16px;
+      }
+
+      .door-gallery {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .door-card {
+        height: 520px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="products-section" aria-labelledby="products-title">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow">Ürün Grupları</p>
+          <h1 id="products-title">Güvenlik, dayanım ve mimari görünüm bir arada.</h1>
+        </div>
+        <p class="section-text">
+          Anasayfa için üç ürün grubunu yan yana, çok az boşluklu ve kademeli başlangıç/bitiş hizasıyla gösteren örnek bölüm.
+        </p>
+      </div>
+
+      <div class="door-gallery">
+        <a class="door-card" href="#" aria-label="Çelik kapı ürünlerini incele">
+          <img
+            src="https://doores.com.tr/assets/front/img/urunler_kapi.png"
+            alt="Modern çelik kapı görseli"
+          />
+          <div class="door-content">
+            <div class="door-index">01</div>
+            <h2>Çelik Kapı</h2>
+            <p>Güvenlik, izolasyon ve modern cephe estetiği için güçlü giriş çözümleri.</p>
+            <div class="door-link">İncele <span>→</span></div>
+          </div>
+        </a>
+
+        <a class="door-card" href="#" aria-label="Yangın kapısı ürünlerini incele">
+          <img
+            src="https://www.iqdoors.com.tr/uploads/products/original-LRENGE2VMT.jpg"
+            alt="Yangın kapısı showroom görseli"
+          />
+          <div class="door-content">
+            <div class="door-index">02</div>
+            <h2>Yangın Kapısı</h2>
+            <p>Projeye uygun dayanım sınıfları, panik bar ve teknik donanım seçenekleri.</p>
+            <div class="door-link">İncele <span>→</span></div>
+          </div>
+        </a>
+
+        <a class="door-card" href="#" aria-label="Villa kapısı ürünlerini incele">
+          <img
+            src="https://ankaracelikkapi.com.tr/assets/images/product/p375/big_image1056.webp"
+            alt="Villa giriş kapısı görseli"
+          />
+          <div class="door-content">
+            <div class="door-index">03</div>
+            <h2>Villa Kapısı</h2>
+            <p>Özel ölçü, dış hava koşullarına uygun kaplama ve mimari cephe uyumu.</p>
+            <div class="door-link">İncele <span>→</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

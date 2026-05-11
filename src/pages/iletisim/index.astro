@@ -22,6 +22,7 @@ const whatsappQuoteUrl =
         <a href="/blog/">Blog</a>
         <a class="active" href="/iletisim/">İletişim</a>
       </nav>
+      <a class="header-phone" href="tel:+905326470613">0532 647 06 13</a>
       <a class="btn-primary" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">Teklif Al</a>
     </div>
   </header>
@@ -29,7 +30,6 @@ const whatsappQuoteUrl =
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <span class="hero-label">İletişim</span>
         <h1>Projeniz için <span>Teklif Alın</span></h1>
         <p>Formu doldurun, ekip en kısa sürede sizinle iletişime geçsin. İsterseniz doğrudan WhatsApp hattından da yazabilirsiniz.</p>
       </div>
@@ -57,6 +57,10 @@ const whatsappQuoteUrl =
             <div class="contact-item">
               <span class="contact-item-label">Çalışma Saatleri</span>
               <strong>Pzt-Cts 08:00 - 18:00</strong>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-label">Adres</span>
+              <strong>Yalı Mah.Ziya Gökalp Cad, Dragos Sahil, nolu depo bölgesi No:5, 34873 Maltepe/İstanbul</strong>
             </div>
           </div>
         </aside>
@@ -99,8 +103,94 @@ const whatsappQuoteUrl =
           </form>
         </article>
       </div>
+
+      <div class="container contact-map-wrap">
+        <article class="contact-map-card">
+          <h2>Konum</h2>
+          <p>Atölye ve ofis konumumuzu harita üzerinden inceleyebilirsiniz.</p>
+          <div class="contact-map-frame">
+            <iframe
+              title="Arslan Çelik Kapı Konum"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3015.1225838960677!2d29.133151282310727!3d40.91305801757201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac423178fa647%3A0xd719301e5d15a1ec!2zQXJzbGFuIMOHZWxpayBLYXDEsQ!5e0!3m2!1str!2str!4v1778003698980!5m2!1str!2str"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
+
+  <style>
+    .hero-inner {
+      display: grid;
+      justify-items: center;
+      text-align: center !important;
+    }
+
+    .hero-inner h1 {
+      margin-inline: auto;
+      width: 100%;
+      text-align: center !important;
+    }
+
+    .hero-inner p {
+      margin-inline: auto;
+      width: 100%;
+      text-align: center !important;
+      max-width: 860px;
+    }
+
+    .contact-map-wrap {
+      margin-top: 18px;
+    }
+
+    .contact-map-card {
+      background: #fff;
+      border: 1px solid #ebe7de;
+      border-radius: var(--radius-card);
+      padding: clamp(16px, 3vw, 24px);
+    }
+
+    .contact-map-card h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      margin-bottom: 8px;
+    }
+
+    .contact-map-card p {
+      color: #5f5a53;
+      margin-bottom: 14px;
+    }
+
+    .contact-map-frame {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e5ded1;
+      background: #f4f1ea;
+      min-height: 320px;
+    }
+
+    .contact-map-frame iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      display: block;
+    }
+
+    @media (max-width: 680px) {
+      .contact-map-wrap {
+        margin-top: 14px;
+      }
+
+      .contact-map-frame,
+      .contact-map-frame iframe {
+        min-height: 260px;
+      }
+    }
+  </style>
 
   <script is:inline>
     const form = document.getElementById("contact-whatsapp-form");
@@ -129,4 +219,8 @@ const whatsappQuoteUrl =
     }
   </script>
 </BaseLayout>
+
+
+
+
 

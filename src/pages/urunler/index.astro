@@ -8,7 +8,7 @@ const categoryMap = {
   "bina-giris-kapisi": "Bina Giriş Kapısı",
 } as const;
 
-const selectedCategory = Astro.url.searchParams.get("kategori");
+const selectedCategory = Astro.url.searchParams.get("kategori")?.trim() ?? "";
 const products = (await getCollection("products", ({ data }) => !data.draft)).sort((a, b) =>
   a.data.title.localeCompare(b.data.title, "tr"),
 );
@@ -37,16 +37,20 @@ const whatsappQuoteUrl =
         <a href="/blog/">Blog</a>
         <a href="/iletisim/">İletişim</a>
       </nav>
+      <a class="header-phone" href="tel:+905326470613">0532 647 06 13</a>
       <a class="btn-primary" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">Teklif Al</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero products-hero">
       <div class="container hero-inner">
-        <span class="hero-label">Ürün Listesi</span>
         <h1>Kapı <span>Modelleri</span></h1>
-        <p>Farklı kullanım alanları için geliştirdiğimiz modelleri inceleyin. Ürün detayları müşteri panelinden kolayca güncellenebilir.</p>
+        <p>
+          Çelik kapı modellerimiz, konut ve iş yeri girişlerinde güvenlik ile estetiği bir araya getirir.
+          Yangın kapısı modellerimiz, yönetmeliklere uygun koruma ve dayanım sağlar.
+          Bina giriş kapısı çözümlerimiz ise apartman ve site projelerinde mimariye uyumlu, güçlü ve uzun ömürlü kullanım sunar.
+        </p>
       </div>
     </section>
 
@@ -60,10 +64,10 @@ const whatsappQuoteUrl =
         </div>
 
         <nav class="category-nav" aria-label="Ürün kategorileri">
-          <a class:list={["category-link", !selectedCategory && "active"]} href="/urunler/">Tüm Ürünler</a>
-          <a class:list={["category-link", selectedCategory === "celik-kapi" && "active"]} href="/urunler/?kategori=celik-kapi">Çelik Kapı</a>
-          <a class:list={["category-link", selectedCategory === "yangin-kapisi" && "active"]} href="/urunler/?kategori=yangin-kapisi">Yangın Kapısı</a>
-          <a class:list={["category-link", selectedCategory === "bina-giris-kapisi" && "active"]} href="/urunler/?kategori=bina-giris-kapisi">Bina Giriş Kapısı</a>
+          <a class="category-link" href="/urunler/">Tüm Ürünler</a>
+          <a class="category-link" href="/urunler/?kategori=celik-kapi">Çelik Kapı</a>
+          <a class="category-link" href="/urunler/?kategori=yangin-kapisi">Yangın Kapısı</a>
+          <a class="category-link" href="/urunler/?kategori=bina-giris-kapisi">Bina Giriş Kapısı</a>
         </nav>
 
         {
@@ -108,5 +112,40 @@ const whatsappQuoteUrl =
       </div>
     </section>
   </main>
+
+  <style>
+    .products-hero .hero-inner h1 {
+      width: 100%;
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    .products-hero .hero-inner p {
+      max-width: 860px;
+      margin-inline: auto;
+      text-align: center;
+    }
+  </style>
+
+  <script is:inline>
+    const categoryNav = document.querySelector(".category-nav");
+    if (categoryNav) {
+      const currentCategory = (new URLSearchParams(window.location.search).get("kategori") || "").trim();
+      const links = [...categoryNav.querySelectorAll(".category-link")];
+
+      links.forEach((link) => link.classList.remove("active"));
+
+      const activeLink = links.find((link) => {
+        const linkCategory = new URL(link.href, window.location.origin).searchParams.get("kategori") || "";
+        return linkCategory.trim() === currentCategory;
+      });
+
+      if (activeLink) activeLink.classList.add("active");
+    }
+  </script>
 </BaseLayout>
+
+
+
+
 

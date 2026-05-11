@@ -1,27 +1,78 @@
 ﻿---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
-
-const categoryMap = {
-  "celik-kapi": "Çelik Kapı",
-  "yangin-kapisi": "Yangın Kapısı",
-  "bina-giris-kapisi": "Bina Giriş Kapısı",
-} as const;
-
-const selectedCategory = Astro.url.searchParams.get("kategori");
-const projects = (await getCollection("projects", ({ data }) => !data.draft)).sort((a, b) =>
-  b.data.completionYear.localeCompare(a.data.completionYear, "tr"),
-);
-
-const filteredProjects = selectedCategory
-  ? projects.filter((entry) => entry.data.doorCategory === selectedCategory)
-  : projects;
 
 const whatsappQuoteUrl =
   "https://wa.me/905326470613?text=Merhaba%2C%20Arslan%20%C3%87elik%20Kap%C4%B1%20i%C3%A7in%20teklif%20almak%20istiyorum.";
+
+const references = [
+  {
+    company: "KAYAİLLİ İNŞAAT",
+    work: "Proje kapsamında 24 adet çelik kapı ve bina giriş kapısı üretim ve montajı yapılmıştır.",
+  },
+  {
+    company: "YALÇINKAYA YAPI İNŞAAT SAN. VE TİC. A.Ş.",
+    work: "Toplu konut projesi için 48 adet çelik kapı, bina giriş kapısı ve 12 adet yangın kapısı uygulanmıştır.",
+  },
+  {
+    company: "DEMİRHAN İNŞAAT",
+    work: "Apartman projesinde 18 adet çelik kapı ve bina giriş kapısı teslim edilmiştir.",
+  },
+  {
+    company: "DOER YAPI LİMİTED ŞİRKETİ",
+    work: "Proje için 36 adet çelik kapı, bina giriş kapısı ve 8 adet yangın kapısı üretimi yapılmıştır.",
+  },
+  {
+    company: "ERSEVİN İNŞAAT EROL SEVİNDİK",
+    work: "Konut projesinde 20 adet çelik kapı ve bina giriş kapısı montajı tamamlanmıştır.",
+  },
+  {
+    company: "NMK YAPI AHŞAP MİMARLIK SAN. TİC. LTD. ŞTİ.",
+    work: "Özel proje kapsamında 15 adet çelik kapı, bina giriş kapısı ve 5 adet yangın kapısı uygulanmıştır.",
+  },
+  {
+    company: "MİRAÇ MÜHENDİSLİK MİMARLIK PROJE DANIŞMANLIK İNŞAAT MOBİLYA",
+    work: "Projede 42 adet çelik kapı, bina giriş kapısı ve 10 adet yangın kapısı üretim ve montajı gerçekleştirilmiştir.",
+  },
+  {
+    company: "ÇAKMAK İNŞAAT MÜTEAHHİTLİK HİZMETLERİ LTD. ŞTİ.",
+    work: "Konut projesi için 30 adet çelik kapı ve bina giriş kapısı teslim edilmiştir.",
+  },
+  {
+    company: "BASE İNŞAAT BİLGİSAYAR YAZILIM A.Ş.",
+    work: "Karma yapı projesinde 26 adet çelik kapı, bina giriş kapısı ve 6 adet yangın kapısı uygulanmıştır.",
+  },
+  {
+    company: "DMR TEKNİK İNŞAAT YAPI MALZEMELERİ TURİZM TİC. A.Ş.",
+    work: "Proje kapsamında 55 adet çelik kapı, bina giriş kapısı ve 14 adet yangın kapısı montajı yapılmıştır.",
+  },
+  {
+    company: "ADENİS İNŞAAT TAAHHÜT TURİZM SAN. VE TİC. A.Ş.",
+    work: "Toplu yaşam alanı projesinde 60 adet çelik kapı, bina giriş kapısı ve 16 adet yangın kapısı teslim edilmiştir.",
+  },
+  {
+    company: "ÇİLOĞLU İNŞAAT",
+    work: "Apartman projesi için 16 adet çelik kapı ve bina giriş kapısı üretilmiştir.",
+  },
+  {
+    company: "BAYTAR İNŞAAT",
+    work: "Konut projesinde 22 adet çelik kapı, bina giriş kapısı ve 4 adet yangın kapısı uygulanmıştır.",
+  },
+  {
+    company: "ALKILIÇ İNŞAAT",
+    work: "Proje kapsamında 14 adet çelik kapı ve bina giriş kapısı montajı tamamlanmıştır.",
+  },
+  {
+    company: "YAPITEK",
+    work: "Yapı projesinde 28 adet çelik kapı, bina giriş kapısı ve 6 adet yangın kapısı teslim edilmiştir.",
+  },
+  {
+    company: "TOZKOPARAN İNŞ",
+    work: "Konut projesi için 12 adet çelik kapı ve bina giriş kapısı üretim ve montajı yapılmıştır.",
+  },
+];
 ---
 
-<BaseLayout title="Projeler | Arslan Çelik Kapı" description="Tamamlanan çelik kapı, yangın kapısı ve bina giriş kapısı projeleri.">
+<BaseLayout title="Projeler | Arslan Çelik Kapı" description="Tamamlanan çelik kapı, yangın kapısı ve bina giriş kapısı proje referansları.">
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="/">
@@ -38,63 +89,195 @@ const whatsappQuoteUrl =
         <a href="/blog/">Blog</a>
         <a href="/iletisim/">İletişim</a>
       </nav>
+      <a class="header-phone" href="tel:+905326470613">0532 647 06 13</a>
       <a class="btn-primary" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">Teklif Al</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <span class="hero-label">Tamamlanan İşler</span>
+    <section class="hero references-hero">
+      <div class="container hero-inner references-hero-inner">
         <h1>Proje <span>Referansları</span></h1>
-        <p>Konut, apartman ve ticari yapılarda tamamladığımız kapı uygulamalarını proje bazında inceleyebilirsiniz.</p>
+        <p>
+          Bugüne kadar 60 farklı firmada, 500’ün üzerinde üretim ve montaj sürecini başarıyla tamamladık.
+          Aşağıda iş birliği yaptığımız firmalardan seçili referanslarımızı inceleyebilirsiniz.
+        </p>
+        <div class="references-stats" aria-label="Referans istatistikleri">
+          <div class="stat-box">
+            <strong>60+</strong>
+            <span>Firma</span>
+          </div>
+          <div class="stat-box">
+            <strong>500+</strong>
+            <span>Üretim</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="projects-section">
+    <section class="references-list-section">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <h2 class="section-title">Projeler</h2>
-            <p class="section-desc">Kategorilere göre filtreleyin, şehir ve tamamlanma yılına göre proje geçmişini görüntüleyin.</p>
-          </div>
+        <div class="references-frame">
+          <ol class="references-list">
+            {
+              references.map((item, index) => (
+                <li class="reference-item">
+                  <div class="reference-index">{String(index + 1).padStart(2, "0")}</div>
+                  <div class="reference-content">
+                    <h2>{item.company}</h2>
+                    <p>{item.work}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ol>
         </div>
-
-        <nav class="category-nav" aria-label="Proje kategorileri">
-          <a class:list={["category-link", !selectedCategory && "active"]} href="/projeler/">Tüm Projeler</a>
-          <a class:list={["category-link", selectedCategory === "celik-kapi" && "active"]} href="/projeler/?kategori=celik-kapi">Çelik Kapı</a>
-          <a class:list={["category-link", selectedCategory === "yangin-kapisi" && "active"]} href="/projeler/?kategori=yangin-kapisi">Yangın Kapısı</a>
-          <a class:list={["category-link", selectedCategory === "bina-giris-kapisi" && "active"]} href="/projeler/?kategori=bina-giris-kapisi">Bina Giriş Kapısı</a>
-        </nav>
-
-        {
-          filteredProjects.length > 0 ? (
-            <div class="projects-grid">
-              {filteredProjects.map((project) => (
-                <article class="project-card">
-                  <div class="project-image-wrap">
-                    <img class="project-image" src={project.data.cover} alt={`${project.data.title} görseli`} loading="lazy" />
-                  </div>
-                  <div class="project-body">
-                    <span class="project-category">{categoryMap[project.data.doorCategory]}</span>
-                    <h3 class="project-title">{project.data.title}</h3>
-                    <p class="project-summary">{project.data.shortDescription}</p>
-                    <div class="project-meta">
-                      <span>{project.data.city}</span>
-                      <span>•</span>
-                      <span>{project.data.completionYear}</span>
-                    </div>
-                    <a class="project-link" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">Benzer Proje İçin Teklif Al</a>
-                  </div>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <div class="product-empty">Bu kategori için henüz proje bulunmuyor.</div>
-          )
-        }
       </div>
     </section>
   </main>
+
+  <style>
+    .references-hero-inner {
+      text-align: center;
+    }
+
+    .references-hero-inner h1 {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .references-hero-inner p {
+      margin-inline: auto;
+      text-align: center;
+      max-width: 860px;
+    }
+
+    .references-stats {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      min-width: 132px;
+      padding: 12px 18px;
+      border: 1px solid rgba(199, 131, 43, 0.35);
+      border-radius: 12px;
+      background: rgba(199, 131, 43, 0.14);
+      color: #f2eee7;
+      text-align: center;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 26px;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .stat-box span {
+      display: block;
+      margin-top: 5px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #d8c8b1;
+      font-weight: 700;
+    }
+
+    .references-list-section {
+      padding: clamp(34px, 7vw, 84px) 0;
+    }
+
+    .references-frame {
+      border-radius: 22px;
+      border: 1px solid #e5dfd4;
+      background: linear-gradient(180deg, #fffdfa 0%, #f8f4ec 100%);
+      box-shadow: 0 20px 44px rgba(23, 18, 9, 0.08);
+      overflow: hidden;
+    }
+
+    .references-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .reference-item {
+      display: grid;
+      grid-template-columns: 62px minmax(0, 1fr);
+      border-bottom: 1px solid #ece5d9;
+      transition: background 0.2s ease;
+    }
+
+    .reference-item:last-child {
+      border-bottom: none;
+    }
+
+    .reference-item:hover {
+      background: rgba(199, 131, 43, 0.05);
+    }
+
+    .reference-index {
+      border-right: 1px solid #ece5d9;
+      display: grid;
+      place-items: center;
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      color: #c7832b;
+      letter-spacing: 0.04em;
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .reference-content {
+      padding: 20px 22px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .reference-content h2 {
+      margin: 0;
+      font-size: clamp(16px, 2vw, 19px);
+      letter-spacing: -0.2px;
+      color: #181512;
+      font-weight: 800;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .reference-content p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.66;
+      color: #575048;
+    }
+
+    @media (max-width: 680px) {
+      .references-stats {
+        gap: 10px;
+      }
+
+      .stat-box {
+        min-width: 118px;
+        padding: 10px 14px;
+      }
+
+      .reference-item {
+        grid-template-columns: 48px minmax(0, 1fr);
+      }
+
+      .reference-content {
+        padding: 16px 14px 16px 15px;
+      }
+
+      .reference-content p {
+        font-size: 14px;
+      }
+    }
+  </style>
 </BaseLayout>
+
 
