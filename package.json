@@ -1,18 +1,24 @@
 {
-    "name":  "arslan-celik-kapi",
-    "type":  "module",
-    "version":  "0.0.1",
-    "private":  true,
-    "scripts":  {
-                    "dev":  "astro dev",
-                    "start":  "astro dev",
-                    "build":  "astro build",
-                    "preview":  "astro preview",
-                    "astro":  "astro",
-                    "cms:proxy":  "npx decap-server",
-                    "dev:cms":  "npx decap-server"
-                },
-    "devDependencies":  {
-                            "astro":  "^5.13.5"
-                        }
+  "name": "arslan-celik-kapi",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "npm run build && wrangler dev",
+    "astro": "astro",
+    "cms:proxy": "npx decap-server",
+    "dev:cms": "npx decap-server",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
+  },
+  "devDependencies": {
+    "astro": "^5.13.5",
+    "wrangler": "^4.90.0"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "12"
+  }
 }
