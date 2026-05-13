@@ -7,7 +7,7 @@ excerpt: Çelik kapılar, hem güvenlik hem de estetik açıdan bir yapının en
   seçimi yapmanıza yardımcı olacağız.
 publishedAt: 2026-05-13
 cover: /images/uploads/1.jpg
-draft: false
+draft: true
 ---
 En Popüler Çelik Kapı Modelleri
 
