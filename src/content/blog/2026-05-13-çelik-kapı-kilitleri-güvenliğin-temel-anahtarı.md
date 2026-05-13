@@ -7,7 +7,7 @@ excerpt: Çelik kapılar, yüksek güvenlik sağlamasıyla bilinir; ancak bu
   açısından büyük önem taşır.
 publishedAt: 2026-05-13
 cover: /images/uploads/2.jpg
-draft: true
+draft: false
 ---
 \# \*\*Çelik Kapı Kilitleri: Güvenliğin Temel Anahtarı\*\*
 
