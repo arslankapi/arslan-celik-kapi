@@ -8,6 +8,11 @@ const whatsappQuoteUrl =
 const blogPosts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
   (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime(),
 );
+
+const firstPost = blogPosts[0];
+const secondPost = blogPosts[1];
+const thirdRowPosts = blogPosts.slice(2, 4);
+const remainingPosts = blogPosts.slice(4);
 ---
 
 <BaseLayout title="Blog | Arslan Çelik Kapı" description="Kapı seçimi, güvenlik ve uygulama süreçleri hakkında blog yazıları.">
@@ -45,28 +50,72 @@ const blogPosts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
         <div class="section-head">
           <div>
             <h2 class="section-title">Son Yazılar</h2>
-            <p class="section-desc">Tüm yazılar panelden yönetilir; başlık, görsel ve içerik alanlarını dilediğin zaman güncelleyebilirsin.</p>
+            <p class="section-desc">Çelik kapılar, yangın kapıları ve bina giriş sistemleri hakkında güncel rehberlere, fiyat bilgilerine ve seçim önerilerine göz atın. Güvenlik, dayanıklılık ve modern tasarımı bir araya getiren içeriklerimizi keşfedin.</p>
           </div>
         </div>
 
         {
           blogPosts.length > 0 ? (
-            <div class="blog-grid">
-              {blogPosts.map((post) => (
-                <article class="blog-card">
-                  <a class="blog-image-wrap" href={`/blog/${post.slug}/`}>
-                    <img class="blog-image" src={post.data.cover} alt={`${post.data.title} görseli`} loading="lazy" />
-                  </a>
-                  <div class="blog-body">
-                    <p class="blog-date">{post.data.publishedAt}</p>
-                    <h3 class="blog-title">
-                      <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-                    </h3>
-                    <p class="blog-excerpt">{post.data.excerpt}</p>
-                    <a class="blog-link" href={`/blog/${post.slug}/`}>Devamını Oku</a>
+            <div class="blog-flow">
+              {
+                firstPost && (
+                  <article class="flow-item flow-primary">
+                    <a class="flow-media flow-media-primary" href={`/blog/${firstPost.slug}/`}>
+                      <img src={firstPost.data.cover} alt={`${firstPost.data.title} görseli`} loading="lazy" />
+                    </a>
+                    <div class="flow-title">
+                      <h3><a href={`/blog/${firstPost.slug}/`}>{firstPost.data.title}</a></h3>
+                    </div>
+                  </article>
+                )
+              }
+
+              {
+                secondPost && (
+                  <article class="flow-item flow-split">
+                    <a class="flow-media flow-media-split" href={`/blog/${secondPost.slug}/`}>
+                      <img src={secondPost.data.cover} alt={`${secondPost.data.title} görseli`} loading="lazy" />
+                    </a>
+                    <div class="flow-title flow-title-split">
+                      <h3><a href={`/blog/${secondPost.slug}/`}>{secondPost.data.title}</a></h3>
+                    </div>
+                  </article>
+                )
+              }
+
+              {
+                thirdRowPosts.length > 0 && (
+                  <div class="flow-pair">
+                    {thirdRowPosts.map((post) => (
+                      <article class="flow-item flow-half">
+                        <a class="flow-media flow-media-half" href={`/blog/${post.slug}/`}>
+                          <img src={post.data.cover} alt={`${post.data.title} görseli`} loading="lazy" />
+                        </a>
+                        <div class="flow-title">
+                          <h3><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h3>
+                        </div>
+                      </article>
+                    ))}
                   </div>
-                </article>
-              ))}
+                )
+              }
+
+              {
+                remainingPosts.length > 0 && (
+                  <div class="flow-remaining">
+                    {remainingPosts.map((post) => (
+                      <article class="flow-item flow-row">
+                        <a class="flow-media flow-media-row" href={`/blog/${post.slug}/`}>
+                          <img src={post.data.cover} alt={`${post.data.title} görseli`} loading="lazy" />
+                        </a>
+                        <div class="flow-title">
+                          <h3><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h3>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                )
+              }
             </div>
           ) : (
             <div class="product-empty">Henüz yayınlanmış blog yazısı yok.</div>
@@ -94,12 +143,13 @@ const blogPosts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
 
     .blog-section .section-head {
       width: 100%;
-      margin-inline: auto  ;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      text-align: center !important;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 8px;
+      margin-bottom: 18px;
     }
 
     .blog-section .section-head .section-title,
@@ -107,12 +157,162 @@ const blogPosts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
       text-align: center;
       margin-inline: auto;
     }
+
+    .blog-flow {
+      display: grid;
+      gap: 28px;
+    }
+
+    .flow-item {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      overflow: hidden;
+    }
+
+    .flow-media {
+      display: block;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .flow-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .flow-item:hover .flow-media img {
+      transform: scale(1.02);
+    }
+
+    .flow-title {
+      min-height: 94px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      padding: 20px 24px;
+    }
+
+    .flow-title h3 {
+      margin: 0;
+      font-size: clamp(22px, 2.8vw, 32px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .flow-half .flow-title h3,
+    .flow-row .flow-title h3,
+    .flow-split .flow-title h3 {
+      font-size: clamp(20px, 2.2vw, 30px);
+    }
+
+    .flow-title a {
+      text-decoration: none;
+      color: #171411;
+    }
+
+    .flow-title a:hover {
+      color: #b06f1f;
+    }
+
+    .flow-media-primary {
+      min-height: clamp(340px, 52vw, 560px);
+    }
+
+    .flow-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      background: #fff;
+    }
+
+    .flow-media-split {
+      min-height: clamp(180px, 24vw, 280px);
+    }
+
+    .flow-title-split {
+      min-height: clamp(180px, 24vw, 280px);
+      align-items: flex-start;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    .flow-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .flow-media-half {
+      min-height: clamp(220px, 28vw, 320px);
+    }
+
+    .flow-remaining {
+      display: grid;
+      gap: 24px;
+    }
+
+    .flow-media-row {
+      min-height: clamp(220px, 26vw, 300px);
+    }
+
+    .flow-media:focus-visible,
+    .flow-title a:focus-visible {
+      outline: 2px solid #c8842f;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 1024px) {
+      .flow-split {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-title-split {
+        min-height: 94px;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .flow-pair {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .blog-flow {
+        gap: 18px;
+      }
+
+      .flow-pair {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .flow-title {
+        min-height: 86px;
+        padding: 16px 18px;
+      }
+
+      .flow-title h3,
+      .flow-half .flow-title h3,
+      .flow-row .flow-title h3,
+      .flow-split .flow-title h3 {
+        font-size: clamp(18px, 6vw, 26px);
+      }
+
+      .flow-media-primary {
+        min-height: clamp(240px, 62vw, 360px);
+      }
+
+      .flow-media-split,
+      .flow-media-half,
+      .flow-media-row {
+        min-height: clamp(180px, 55vw, 280px);
+      }
+    }
   </style>
 </BaseLayout>
-
-
-
-
-
-
-
