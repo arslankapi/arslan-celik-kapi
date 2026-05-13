@@ -349,7 +349,7 @@ a {
 
 .product-image-wrap {
   height: 320px;
-  background: linear-gradient(180deg, #f7f7f7 0%, #eeeeee 100%);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
