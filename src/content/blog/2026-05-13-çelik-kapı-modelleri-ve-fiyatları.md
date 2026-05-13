@@ -6,7 +6,7 @@ excerpt: Çelik kapılar, hem güvenlik hem de estetik açıdan bir yapının en
   yazıda, çelik kapı modelleri ve fiyatları hakkında detaylı bilgi vererek doğru
   seçimi yapmanıza yardımcı olacağız.
 publishedAt: 2026-05-13
-cover: /images/WhatsApp Image 2026-05-13 at 12.03.05.jpeg
+cover: /images/WhatsApp Image 2026-05-13 at 12.03.05-1.jpeg
 draft: false
 ---
 # En Popüler Çelik Kapı Modelleri
