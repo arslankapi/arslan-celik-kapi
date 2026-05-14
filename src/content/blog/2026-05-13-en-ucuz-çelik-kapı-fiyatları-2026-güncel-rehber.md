@@ -5,7 +5,7 @@ excerpt: Ev veya iş yeriniz için güvenli ve ekonomik bir çözüm arıyorsan�
   gelir. Ancak burada önemli olan sadece fiyat değil; aynı zamanda güvenlik,
   kalite ve uzun ömürlü kullanım dengesidir.
 publishedAt: 2026-05-13
-cover: /images/WhatsApp Image 2026-05-13 at 12.03.05 (3).jpeg
+cover: /images/WhatsApp Image 2026-05-13 at 12.03.05 (3)-1.jpeg
 draft: false
 ---
 # **En Ucuz Çelik Kapı Fiyatları (2026 Güncel Rehber)**
