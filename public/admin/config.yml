@@ -17,7 +17,7 @@ collections:
     create: true
     extension: md
     format: frontmatter
-    slug: "{{fields.modelCode}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Ürün Adı", name: "title", widget: "string" }
       - { label: "Model Kodu", name: "modelCode", widget: "string" }
@@ -52,7 +52,7 @@ collections:
     create: true
     extension: md
     format: frontmatter
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}}"
     fields:
       - { label: "Başlık", name: "title", widget: "string" }
       - { label: "Özet", name: "excerpt", widget: "text" }
