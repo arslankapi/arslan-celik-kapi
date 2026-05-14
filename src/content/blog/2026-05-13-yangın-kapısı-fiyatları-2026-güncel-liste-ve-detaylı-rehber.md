@@ -6,13 +6,13 @@ excerpt: >
   projeler için sıkça araştırılan bir konudur.
 
 
-  Peki 2026 yılında yangın kapısı fiyatları ne kadar? Hangi faktörlere göre değişir? Bu rehberde tüm detayları bulabilirsiniz.
+  Peki 2026 yılında yangın kapısı fiyatları ne kadar? Hangi faktörlere göre
+  değişir? Bu rehberde tüm detayları bulabilirsiniz.
 publishedAt: 2026-05-13
-cover: /images/uploads/7.jpg
+cover: /images/WhatsApp Image 2026-05-13 at 12.03.05 (1).jpeg
 draft: false
 ---
 # **Yangın Kapısı Fiyatları (2026 Güncel Liste ve Detaylı Rehber)**
-
 
 ## **Yangın Kapısı Fiyatları Ne Kadar? (2026)**
 
