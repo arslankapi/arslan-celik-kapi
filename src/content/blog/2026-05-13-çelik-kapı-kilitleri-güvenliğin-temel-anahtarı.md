@@ -6,7 +6,7 @@ excerpt: Çelik kapılar, yüksek güvenlik sağlamasıyla bilinir; ancak bu
   nedenle doğru kilit seçimi, hem bireysel güvenlik hem de yaşam konforu
   açısından büyük önem taşır.
 publishedAt: 2026-05-13
-cover: /images/WhatsApp Image 2026-05-13 at 12.03.06 (1)-1.jpeg
+cover: /images/WhatsApp Image 2026-05-13 at 12.03.06 (1)-2.jpeg
 draft: false
 ---
 # **Çelik Kapı Kilitleri: Güvenliğin Temel Anahtarı**
