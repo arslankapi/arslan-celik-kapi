@@ -52,7 +52,7 @@ collections:
     create: true
     extension: md
     format: frontmatter
-    slug: "{{slug}}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Başlık", name: "title", widget: "string" }
       - { label: "Özet", name: "excerpt", widget: "text" }
