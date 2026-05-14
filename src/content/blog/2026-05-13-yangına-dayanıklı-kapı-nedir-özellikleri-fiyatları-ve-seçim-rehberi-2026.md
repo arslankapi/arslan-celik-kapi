@@ -8,7 +8,7 @@ excerpt: >-
 
   Bu yazıda, tüm detaylarıyla öğrenebilirsiniz.
 publishedAt: 2026-05-13
-cover: /images/WhatsApp Image 2026-05-13 at 12.03.05 (2).jpeg
+cover: /images/WhatsApp Image 2026-05-13 at 12.03.05 (2)-1.jpeg
 draft: false
 ---
 # **Yangına Dayanıklı Kapı Nedir?**
