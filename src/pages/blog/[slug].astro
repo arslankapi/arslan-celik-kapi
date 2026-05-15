@@ -44,7 +44,7 @@ const relatedPosts = (await getCollection("blog", ({ data }) => !data.draft))
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero blog-detail-hero">
       <div class="container hero-inner">
         <p class="breadcrumb">
           <a href="/">Anasayfa</a>
@@ -107,6 +107,23 @@ const relatedPosts = (await getCollection("blog", ({ data }) => !data.draft))
       )
     }
   </main>
+<style>
+  .blog-detail-hero .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .blog-detail-hero .breadcrumb {
+    justify-content: center;
+  }
+
+  .blog-detail-hero .hero-inner > p {
+    max-width: 860px;
+    margin-inline: auto;
+  }
+</style>
 </BaseLayout>
 
 

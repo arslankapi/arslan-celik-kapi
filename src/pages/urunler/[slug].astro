@@ -52,7 +52,7 @@ const relatedProducts = (await getCollection("products", ({ data }) => !data.dra
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero product-detail-hero">
       <div class="container hero-inner">
         <p class="breadcrumb">
           <a href="/">Anasayfa</a>
@@ -170,6 +170,23 @@ const relatedProducts = (await getCollection("products", ({ data }) => !data.dra
       )
     }
   </main>
+  <style>
+    .product-detail-hero .hero-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .product-detail-hero .breadcrumb {
+      justify-content: center;
+    }
+
+    .product-detail-hero .hero-inner > p {
+      max-width: 860px;
+      margin-inline: auto;
+    }
+  </style>
 </BaseLayout>
 
 

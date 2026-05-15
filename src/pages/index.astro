@@ -1,5 +1,34 @@
-﻿---
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const featuredProductSlugs = [
+  "ars-114",
+  "ars-126",
+  "ars-101",
+  "ars-131",
+  "ak-458",
+  "ak-452",
+  "ars-413",
+  "ars-426",
+] as const;
+
+const categoryMap = {
+  "celik-kapi": "Çelik Kapı",
+  "yangin-kapisi": "Yangın Kapısı",
+  "bina-giris-kapisi": "Bina Giriş Kapısı",
+} as const;
+
+const badgeClassMap = {
+  "celik-kapi": "badge-orange",
+  "bina-giris-kapisi": "badge-mustard",
+  "yangin-kapisi": "badge-yellow",
+} as const;
+
+const allProducts = await getCollection("products", ({ data }) => !data.draft);
+const featuredProducts = featuredProductSlugs
+  .map((slug) => allProducts.find((product) => product.slug === slug))
+  .filter((product): product is (typeof allProducts)[number] => Boolean(product));
 ---
 
 <BaseLayout title="Arslan Çelik Kapı | Anasayfa" description="Çelik kapı, yangın kapısı ve bina giriş kapısı üretiminde proje odaklı çözümler.">
@@ -244,55 +273,42 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h2 class="section-title">En çok tercih edilen<br>kapı modelleri</h2>
       <a href="/urunler/" class="btn-outline-dark" style="margin-bottom:14px; white-space:nowrap;">Tüm Ürünleri Gör</a>
     </div>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="product-img">
-          <img src="/images/uploads/whatsapp-image-2026-04-27-at-21.20.44.jpeg" alt="ARS-114 Çelik Kapı" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <div class="product-badge">Çelik Kapı</div>
-          <h3>ARS-114 Çelik Kapı</h3>
-          <p>Konut girişleri için modern çizgili, güvenli ve dayanıklı çelik kapı çözümü.</p>
-          <p class="product-price-note">Özel ölçüye göre teklif alınız</p>
-          <div class="product-actions">
-            <a href="/iletisim/" class="btn-sm btn-sm-primary">Teklif Al</a>
-            <a href="/urunler/ars-114/" class="btn-sm btn-sm-outline">Detaylar</a>
+
+    <div class="featured-cards-grid">
+      {featuredProducts.map((product) => (
+        <article class="product-card" data-category={product.data.category} data-product-slug={product.slug}>
+          <a class="card-image-link" href={`/urunler/${product.slug}/`}>
+            <div class="card-image-wrap">
+              <img src={product.data.image} alt={`${product.data.title} görseli`} loading="lazy" />
+            </div>
+            <div class="hover-overlay"><span>Ürünü İncele →</span></div>
+          </a>
+
+          <div class="card-body">
+            <span class:list={["category-badge", badgeClassMap[product.data.category]]}>{categoryMap[product.data.category]}</span>
+            <h3 class="product-title">{product.data.title}</h3>
+            <p class="product-material">{product.data.material}</p>
+            <p class="model-code">Model: {product.data.modelCode}</p>
+            <p class="product-desc">{product.data.shortDescription}</p>
+
+            <div class="specs-box" aria-label="Ölçü ve renk bilgisi">
+              <div class="spec-item">
+                <span class="spec-label">Ölçü</span>
+                <span class="spec-value">{product.data.size}</span>
+              </div>
+              <span class="spec-dot" aria-hidden="true"></span>
+              <div class="spec-item">
+                <span class="spec-label">Renk</span>
+                <span class="spec-value">{product.data.color}</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img">
-          <img src="/images/uploads/d5075ba04d2b8a3e3fbd83ea7a4d0437.jpg" alt="AK-451 Yangın Kapısı" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <div class="product-badge">Yangın Kapısı</div>
-          <h3>AK-451 Yangın Kapısı</h3>
-          <p>Yangın güvenliği gereken alanlarda dayanım ve tahliye standardı sunan model.</p>
-          <p class="product-price-note">Özel ölçüye göre teklif alınız</p>
-          <div class="product-actions">
-            <a href="/iletisim/" class="btn-sm btn-sm-primary">Teklif Al</a>
-            <a href="/urunler/ak-451/" class="btn-sm btn-sm-outline">Detaylar</a>
-          </div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img">
-          <img src="/images/uploads/e5fcb3e3a52461d54434206a43d2bdc9.jpg" alt="ARS-423 Bina Giriş Kapısı" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <div class="product-badge">Bina Giriş Kapısı</div>
-          <h3>ARS-423 Bina Giriş Kapısı</h3>
-          <p>Apartman ve site girişlerinde mimari görünümle güvenliği bir araya getiren çözüm.</p>
-          <p class="product-price-note">Özel ölçüye göre teklif alınız</p>
-          <div class="product-actions">
-            <a href="/iletisim/" class="btn-sm btn-sm-primary">Teklif Al</a>
-            <a href="/urunler/ars-423/" class="btn-sm btn-sm-outline">Detaylar</a>
-          </div>
-        </div>
-      </div>
+        </article>
+      ))}
     </div>
   </div>
 </section>
+
 <!-- INSTALLATION QUALITY -->
 <section class="installation-quality" aria-labelledby="installation-quality-title">
   <div class="container">
@@ -497,7 +513,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <a href="/blog/" class="btn-outline-dark">Tüm Yazılar</a>
     </div>
     <div class="blog-grid">
-      <a class="blog-card" href="/blog/celik-kapi-secim-kriterleri/">
+      <a class="blog-card" href="/blog/2026-05-13-çelik-kapı-modelleri-ve-fiyatları/">
         <div class="blog-img">🔒</div>
         <div class="blog-body">
           <div class="blog-meta">
@@ -505,12 +521,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="blog-dot"></div>
             <span class="blog-date">12 Mart 2025</span>
           </div>
-          <h3>Çelik Kapı Seçerken Nelere Dikkat Edilmeli?</h3>
-          <p>Doğru çelik kapı seçimi için dikkat etmeniz gereken teknik özellikler ve model kriterleri.</p>
+          <h3>Çelik Kapı Modelleri ve Fiyatları</h3>
+          <p>2026 güncel model seçeneklerini ve fiyat aralıklarını tek bakışta karşılaştırabileceğiniz kapsamlı bir rehber.</p>
           <span class="blog-read">Devamını Oku →</span>
         </div>
       </a>
-      <a class="blog-card" href="/blog/yangin-kapisi-kullanim-alanlari/">
+      <a class="blog-card" href="/blog/2026-05-13-yangına-dayanıklı-kapı-nedir-özellikleri-fiyatları-ve-seçim-rehberi-2026/">
         <div class="blog-img">🔥</div>
         <div class="blog-body">
           <div class="blog-meta">
@@ -518,12 +534,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="blog-dot"></div>
             <span class="blog-date">28 Şubat 2025</span>
           </div>
-          <h3>Yangın Kapısı Nerelerde Kullanılır?</h3>
-          <p>Yangın kapısı zorunluluğu olan alanlar, kullanım senaryoları ve doğru seçim kriterleri.</p>
+          <h3>Yangına Dayanıklı Kapı Nedir?</h3>
+          <p>Yangına dayanıklı kapıların teknik özellikleri, seçim kriterleri ve 2026 fiyat bilgileri bu yazıda özetlenir.</p>
           <span class="blog-read">Devamını Oku →</span>
         </div>
       </a>
-      <a class="blog-card" href="/blog/bina-giris-kapisinda-malzeme-secimi/">
+      <a class="blog-card" href="/blog/2026-05-13-bina-giriş-kapısı-nasıl-seçilir-apartmanlar-için-güvenli-ve-şık-kapı-rehberi/">
         <div class="blog-img">🏢</div>
         <div class="blog-body">
           <div class="blog-meta">
@@ -531,8 +547,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="blog-dot"></div>
             <span class="blog-date">15 Ocak 2025</span>
           </div>
-          <h3>Apartman Giriş Kapısı Seçiminde Önemli Kriterler</h3>
-          <p>Bina güvenliği, estetik ve uzun ömürlü kullanım için apartman giriş kapısı rehberi.</p>
+          <h3>Bina Giriş Kapısı Nasıl Seçilir?</h3>
+          <p>Apartmanlar için güvenli, estetik ve uzun ömürlü bina giriş kapısı seçiminde dikkat edilmesi gereken noktaları anlatır.</p>
           <span class="blog-read">Devamını Oku →</span>
         </div>
       </a>
@@ -677,6 +693,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </script>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap");
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -968,7 +985,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
   .group-link:hover { gap: 10px; }
   .group-link svg { width: 16px; height: 16px; }
-
   /* FEATURED PRODUCTS */
   .featured { padding: 96px 0; background: var(--white); }
   .featured-head {
@@ -979,74 +995,200 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     gap: 10px;
   }
   .featured-head .btn-outline-dark { margin-bottom: 0 !important; }
-  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .product-card {
-    background: var(--offwhite);
-    border-radius: var(--radius-card);
-    overflow: hidden;
-    border: 1px solid #E5E1D8;
-    transition: transform .25s, box-shadow .25s;
-  }
-  .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
-  .product-img {
-    height: 220px;
-    background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .product-img img {
+
+  .featured-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
     width: 100%;
-    height: 100%;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .featured .product-card {
+    background: #fff;
+    border: 0.5px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, transform 0.18s;
+  }
+
+  .featured .product-card:hover {
+    border-color: rgba(0, 0, 0, 0.28);
+    transform: translateY(-3px);
+    box-shadow: none;
+  }
+
+  .featured .card-image-link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .featured .card-image-wrap {
+    width: 100%;
+    height: clamp(320px, 28vw, 420px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #ffffff;
+    transition: opacity 0.2s;
+    padding: 16px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .featured .card-image-wrap img {
+    width: 92%;
+    height: 92%;
+    max-width: 92%;
+    max-height: 92%;
     object-fit: contain;
     object-position: center;
     display: block;
-    padding: 16px;
   }
-  .product-badge {
+
+  .featured .product-card[data-product-slug="ars-413"] .card-image-wrap img {
+    width: 90%;
+    height: 90%;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .featured .card-image-link:hover .card-image-wrap {
+    opacity: 0.92;
+  }
+
+  .featured .card-image-link:hover .hover-overlay {
+    opacity: 1;
+  }
+
+  .featured .hover-overlay {
     position: absolute;
-    top: 14px; left: 14px;
-    background: rgba(199,131,43,0.18);
-    border: 1px solid rgba(199,131,43,0.35);
-    color: var(--gold-hover);
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .featured .hover-overlay span {
+    background: rgba(255, 255, 255, 0.92);
+    color: #222;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  .featured .card-body {
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .featured .category-badge {
+    align-self: flex-start;
     font-size: 11px;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 100px;
-    font-family: 'Manrope', sans-serif;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-  }
-  .product-img-icon { font-size: 56px; opacity: 0.5; display: none; }
-  .product-body { padding: 22px; }
-  .product-body .product-badge {
-    position: static;
-    display: inline-block;
-    margin-bottom: 10px;
-    background: #fffaf3;
-    border: 1px solid #f0d6b4;
-    color: var(--gold);
-  }
-  .product-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--black); font-family: 'Manrope', sans-serif; }
-  .product-body p { font-size: 14px; color: #6B6760; line-height: 1.6; margin-bottom: 18px; }
-  .product-price-note {
-    font-size: 12px; color: var(--text-muted); font-style: italic; margin-bottom: 16px;
-  }
-  .product-actions { display: flex; gap: 8px; }
-  .product-actions .btn-sm {
-    padding: 8px 16px;
-    font-size: 13px;
     font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    font-family: 'Manrope', sans-serif;
-    transition: .2s;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.01em;
+    display: inline-flex;
+    align-items: center;
   }
-  .btn-sm-primary { background: var(--gold); color: var(--white); border: none; }
-  .btn-sm-primary:hover { background: var(--gold-hover); }
-  .btn-sm-outline { background: transparent; border: 1.5px solid #C8C4BE; color: var(--black); }
-  .btn-sm-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .featured .badge-orange {
+    background: #d5852f;
+    color: #ffffff;
+    border: 0.5px solid #b86b1e;
+  }
+
+  .featured .badge-mustard {
+    background: #b38a1f;
+    color: #ffffff;
+    border: 0.5px solid #916f14;
+  }
+
+  .featured .badge-yellow {
+    background: #d1b531;
+    color: #ffffff;
+    border: 0.5px solid #ad9524;
+  }
+
+  .featured .product-title {
+    font-family: "DM Serif Display", serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1a1a1a;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .featured .product-material {
+    font-size: 11px;
+    color: #6b6b6b;
+    margin: 0;
+  }
+
+  .featured .model-code {
+    font-size: 10.5px;
+    color: #9b9b9b;
+    margin: 0;
+  }
+
+  .featured .product-desc {
+    font-size: 11.5px;
+    color: #5c5c5c;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .featured .specs-box {
+    background: #f5f4f1;
+    border: 0.5px solid rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .featured .spec-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .featured .spec-label {
+    color: #9b9b9b;
+    font-size: 10.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .featured .spec-value {
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  .featured .spec-dot {
+    width: 3px;
+    height: 3px;
+    background: #c8c8c4;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: inline-block;
+  }
 
   /* INSTALLATION QUALITY */
   .installation-quality {
@@ -1795,7 +1937,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .hero-trust { flex-wrap: wrap; gap: 14px; }
     .stats-grid,
     .groups-grid,
-    .products-grid,
+    .featured-cards-grid,
     .projects-grid,
     .refs-grid,
     .blog-grid,
@@ -1803,6 +1945,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .contact-inner { grid-template-columns: 1fr; gap: 28px; }
+    .quality-inner { grid-template-columns: 1fr; gap: 26px; }
+    .quality-steps { gap: 10px; }
     .door-showcase { padding: 78px 0 72px; }
     .door-showcase .container,
     .delivery-banner .container { padding: 0 24px; }
@@ -1830,6 +1974,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .delivery-banner-card { min-height: 360px; }
     .delivery-banner-copy { padding: 24px; }
     .delivery-banner-copy .btn-primary { width: 100%; min-width: 0; }
+    .projects-inner { grid-template-columns: 1fr; gap: 28px; }
+    .projects-visual { align-self: center; }
     .installation-quality {
       padding: 74px 0 78px;
     }
@@ -1851,7 +1997,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
     .stats-grid,
     .groups-grid,
-    .products-grid,
+    .featured-cards-grid,
     .projects-grid,
     .refs-grid,
     .blog-grid,
@@ -1931,10 +2077,52 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .installation-quality-head { margin-bottom: 24px; }
     .installation-quality-content h3 { font-size: 24px; }
     .installation-feature-list li { font-size: 14.5px; line-height: 1.55; }
-    .project-production-media { width: min(100%, 320px); }
+    .quality-step { padding: 16px 14px; gap: 14px; }
+    .step-num { min-width: 30px; font-size: 22px; }
+    .quality-step h4 { font-size: 15px; }
+    .quality-step p { font-size: 13.5px; line-height: 1.55; }
+    .project-production-media { width: min(100%, 420px); }
+  }
+
+  @media (max-width: 680px) {
+    .featured-cards-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .featured .card-image-wrap {
+      height: clamp(260px, 64vw, 320px);
+      padding: 12px;
+    }
+    .featured .card-image-wrap img {
+      width: 90%;
+      height: 90%;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    .featured .product-card[data-product-slug="ars-413"] .card-image-wrap img {
+      width: 88%;
+      height: 88%;
+      max-width: 88%;
+      max-height: 88%;
+    }
+    .featured .card-body {
+      padding: 11px 12px 13px;
+      gap: 6px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .featured-cards-grid {
+      grid-template-columns: 1fr;
+    }
+    .featured .card-image-wrap {
+      height: clamp(280px, 78vw, 340px);
+    }
   }
 </style>
 </BaseLayout>
+
+
 
 
 

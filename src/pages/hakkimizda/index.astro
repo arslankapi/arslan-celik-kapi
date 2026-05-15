@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/about.css";
 
 const whatsappQuoteUrl =
   "https://wa.me/905320605413?text=Merhaba%2C%20Arslan%20%C3%87elik%20Kap%C4%B1%20i%C3%A7in%20teklif%20almak%20istiyorum.";
@@ -27,99 +28,53 @@ const whatsappQuoteUrl =
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <h1>Arslan Çelik Kapı <span>Hakkında</span></h1>
-        <p>Özel ölçü üretim, proje bazlı yaklaşım ve sürdürülebilir kalite odağıyla konut ve ticari yapılar için kapı çözümleri geliştiriyoruz.</p>
-      </div>
+  <main class="about-page">
+    <section class="about-hero">
+      <h1>Arslan Çelik Kapı <span>Hakkında</span></h1>
+      <p>Özel ölçü üretim, proje bazlı yaklaşım ve sürdürülebilir kalite odağıyla konut ve ticari yapılar için kapı çözümleri geliştiriyoruz.</p>
+
     </section>
 
-    <section class="about-section">
-      <div class="container">
-        <div class="about-grid">
-          <article class="about-card">
-            <h2>Biz Kimiz?</h2>
-            <p>
-              Arslan Çelik Kapı, çelik kapı, yangın kapısı ve bina giriş kapısı üretiminde proje ihtiyaçlarını teknik doğrulukla
-              birleştiren bir üretim ekibidir. Her projede ölçü, kullanım yoğunluğu ve estetik beklentiyi birlikte ele alırız.
-            </p>
-            <p>
-              Müşterilerimize tek bir model değil, sahaya ve yapıya uygun doğru çözümü sunmayı hedefleriz. Üretimden montaja kadar
-              süreç takibini şeffaf biçimde yürütürüz.
-            </p>
-          </article>
-
-          <article class="about-card">
-            <h2>Üretim Yaklaşımımız</h2>
-            <div class="about-list">
-              <div class="about-list-item">
-                <strong>Keşif ve Ölçü</strong>
-                <span>Uygulama öncesi teknik gereksinimleri netleştiriyoruz.</span>
-              </div>
-              <div class="about-list-item">
-                <strong>Model ve Malzeme</strong>
-                <span>Kullanım senaryosuna göre gövde, panel ve aksesuar seçimi yapıyoruz.</span>
-              </div>
-              <div class="about-list-item">
-                <strong>Üretim ve Kontrol</strong>
-                <span>Her ürün teslim öncesi kalite kontrol sürecinden geçer.</span>
-              </div>
-              <div class="about-list-item">
-                <strong>Montaj ve Destek</strong>
-                <span>Saha uygulamasını planlı ilerletip teslim sonrası desteği sürdürüyoruz.</span>
-              </div>
-            </div>
-          </article>
+    <section class="about-identity">
+      <div class="about-identity-ghost">15</div>
+      <div class="about-identity-grid">
+        <div class="about-identity-stats">
+          <div class="stat-item"><div class="num">15</div><div class="label">Yıllık Sektör Tecrübesi</div></div>
+          <div class="stat-item"><div class="num">500<span>+</span></div><div class="label">Tamamlanan Proje</div></div>
+          <div class="stat-item"><div class="num">3</div><div class="label">Ana Ürün Kategorisi</div></div>
         </div>
-
-        <div class="about-stats">
-          <div class="about-stat">
-            <strong>10+ Yıl</strong>
-            <span>Sektör deneyimi</span>
-          </div>
-          <div class="about-stat">
-            <strong>500+</strong>
-            <span>Tamamlanan proje</span>
-          </div>
-          <div class="about-stat">
-            <strong>3 Ana Kategori</strong>
-            <span>Çelik, yangın, bina giriş kapısı</span>
-          </div>
-          <div class="about-stat">
-            <strong>%100</strong>
-            <span>Ölçüye özel üretim odağı</span>
-          </div>
-        </div>
-
-        <div class="about-cta">
-          <h3>Projeniz için birlikte doğru modeli belirleyelim.</h3>
-          <a class="btn-primary" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">WhatsApp ile İletişime Geç</a>
+        <div class="about-identity-text">
+          <p class="eyebrow">— Biz Kimiz</p>
+          <h2>Kapıyı doğru seçmek,<br />projenin ilk doğru kararıdır.</h2>
+          <p>Arslan Çelik Kapı, çelik kapı, yangın kapısı ve bina giriş kapısı üretiminde proje ihtiyaçlarını teknik doğrulukla birleştiren bir üretim ekibidir. Her projede ölçü, kullanım yoğunluğu ve estetik beklentiyi birlikte ele alırız.</p>
+          <p>Müşterilerimize tek bir model değil, sahaya ve yapıya uygun doğru çözümü sunmayı hedefleriz. Üretimden montaja kadar süreç takibini şeffaf biçimde yürütürüz.</p>
         </div>
       </div>
     </section>
-  </main>
+    <section class="about-categories">
+      <div class="about-inner"><p class="section-label">— Ne Üretiyoruz</p></div>
+      <article class="cat-item"><span class="cat-num">01</span><div class="cat-body"><h3>Çelik Kapı</h3><p>Bireysel konutlardan çok katlı yapılara kadar her ölçekte çelik kapı üretimi yapıyoruz. Standart ve özel ölçü seçenekleriyle, istenilen güvenlik sınıfı ve estetik anlayışa göre üretim gerçekleştiriyoruz.</p></div><span class="cat-tag">Bireysel &amp; Kurumsal</span></article>
+      <article class="cat-item"><span class="cat-num">02</span><div class="cat-body"><h3>Yangın Kapısı</h3><p>Yönetmeliklere uygun, sertifikalı yangın kapısı üretimi. Konut projelerinden AVM, hastane ve okul gibi kurumsal yapılara kadar can ve mal güvenliğini ön planda tutarak üretiyoruz.</p></div><span class="cat-tag">Sertifikalı Üretim</span></article>
+      <article class="cat-item"><span class="cat-num">03</span><div class="cat-body"><h3>Bina &amp; Villa Giriş Kapısı</h3><p>Yapının kimliğini yansıtan, sağlam ve uzun ömürlü bina giriş ve villa kapıları. Mimari projeyle uyumlu özel tasarım ve anahtar teslim uygulama seçeneğiyle.</p></div><span class="cat-tag">Özel Tasarım</span></article>
+    </section>
 
-  <style>
-    .hero-inner {
-      text-align: center;
-    }
+    <section class="about-process">
+      <div class="about-inner"><p class="section-label">— Nasıl Çalışıyoruz</p></div>
+      <div class="process-flow">
+        <article class="process-step"><div class="step-dot"><span>01</span></div><h4>Keşif &amp; Ölçü</h4><p>Uygulama öncesi teknik gereksinimleri ve saha koşullarını yerinde netleştiriyoruz.</p></article>
+        <article class="process-step"><div class="step-dot"><span>02</span></div><h4>Model &amp; Malzeme</h4><p>Kullanım senaryosuna göre gövde, panel ve aksesuar seçimi yapıyoruz.</p></article>
+        <article class="process-step"><div class="step-dot"><span>03</span></div><h4>Üretim &amp; Kontrol</h4><p>Her ürün teslim öncesi kalite kontrol sürecinden geçiyor.</p></article>
+        <article class="process-step"><div class="step-dot"><span>04</span></div><h4>Montaj &amp; Destek</h4><p>Saha uygulamasını planlı ilerleterek teslim sonrası desteği sürdürüyoruz.</p></article>
+      </div>
+    </section>
 
-    .hero-inner h1 {
-      margin-inline: auto;
-      text-align: center;
-    }
-
-    .hero-inner p {
-      margin-inline: auto;
-      text-align: center;
-      max-width: 860px;
-    }
-  </style>
+    <section class="about-numbers">
+      <div class="numbers-row">
+        <div class="num-block"><span class="big">15<em>+</em></span><span class="desc">Yıl Tecrübe</span></div>
+        <div class="num-block"><span class="big">500<em>+</em></span><span class="desc">Tamamlanan Proje</span></div>
+        <div class="num-block"><span class="big">3</span><span class="desc">Ana Kategori</span></div>
+        <div class="num-block"><span class="big"><em>%</em>100</span><span class="desc">Özel Ölçü Üretim</span></div>
+      </div>
+    </section>  </main>
 </BaseLayout>
-
-
-
-
-
 

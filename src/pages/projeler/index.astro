@@ -1,60 +1,9 @@
-﻿---
+---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ReferenceLogos from "../../components/ReferenceLogos.astro";
 
 const whatsappQuoteUrl =
   "https://wa.me/905320605413?text=Merhaba%2C%20Arslan%20%C3%87elik%20Kap%C4%B1%20i%C3%A7in%20teklif%20almak%20istiyorum.";
-
-const references = [
-  {
-    company: "Kayailli İnşaat",
-  },
-  {
-    company: "Yalçınkaya Yapı İnşaat San. ve Tic. A.Ş.",
-  },
-  {
-    company: "Demirhan İnşaat",
-  },
-  {
-    company: "Doer Yapı Limited Şirketi",
-  },
-  {
-    company: "Ersevin İnşaat Erol Sevindik",
-  },
-  {
-    company: "NMK Yapı Ahşap Mimarlık San. Tic. Ltd. Şti.",
-  },
-  {
-    company: "Miraç Mühendislik Mimarlık Proje Danışmanlık İnşaat Mobilya",
-  },
-  {
-    company: "Çakmak İnşaat Müteahhitlik Hizmetleri Ltd. Şti.",
-  },
-  {
-    company: "Base İnşaat Bilgisayar Yazılım A.Ş.",
-  },
-  {
-    company: "DMR Teknik İnşaat Yapı Malzemeleri Turizm Tic. A.Ş.",
-  },
-  {
-    company: "Adenis İnşaat Taahhüt Turizm San. ve Tic. A.Ş.",
-  },
-  {
-    company: "Çiloğlu İnşaat",
-  },
-  {
-    company: "Baytar İnşaat",
-  },
-  {
-    company: "Alkılıç İnşaat",
-  },
-  {
-    company: "Yapıtek",
-  },
-  {
-    company: "Tozkoparan İnş",
-  },
-];
 ---
 
 <BaseLayout title="Projeler | Arslan Çelik Kapı" description="Tamamlanan çelik kapı, yangın kapısı ve bina giriş kapısı proje referansları.">
@@ -103,27 +52,44 @@ const references = [
 
     <ReferenceLogos />
 
-    <section class="references-list-section">
+    <section class="references-note-section">
       <div class="container">
-        <div class="references-frame">
-          <ol class="references-list">
-            {
-              references.map((item, index) => (
-                <li class="reference-item">
-                  <div class="reference-index">{String(index + 1).padStart(2, "0")}</div>
-                  <div class="reference-content">
-                    <h2>{item.company}</h2>
-                  </div>
-                </li>
-              ))
-            }
-          </ol>
-        </div>
+        <article class="paper-note">
+          <h2>İş Yaptığımız Firmalar</h2>
+          <hr />
+
+          <p>
+            <strong>Güvenen Firmalar, Tamamlanan Projeler.</strong>
+            Her logonun arkasında bir el sıkışma değil, bir taahhüt var. Yıllar içinde inşaat sektörünün köklü
+            müteahhitlerinden kurumsal yapı yönetim şirketlerine, taşeron firmalardan bireysel yatırımcılara kadar onlarca
+            farklı paydaşla ortak projeler ürettik. Yukarıda gördüğünüz markalar, bize bir kez değil defalarca dönen
+            isimler.
+          </p>
+
+          <p>
+            <strong>15 Yıl, Yüzlerce Kapı, Tek Standart.</strong>
+            2010'dan bu yana çelik kapı, yangın kapısı ve bina ile villa giriş kapısı üretiminde sektörün içindeyiz.
+            Bu süreçte öğrendiğimiz en önemli şey şu: her proje farklıdır, ancak kalite beklentisi hiç değişmez. Küçük bir
+            villanın giriş kapısından büyük bir rezidans projesinin tüm yangın kapılarına kadar aynı işçilik titizliğini,
+            aynı malzeme standartlarını ve aynı teslim disiplinini uyguluyoruz.
+          </p>
+
+          <p>
+            <strong>Kurumsal Projelerde Anahtar Teslim Çözüm.</strong>
+            Büyük ölçekli projelerde onlarca farklı tedarikçiyle muhatap olmak hem zaman hem de koordinasyon kaybı demektir.
+            Biz bu yükü ortadan kaldırıyoruz. Bir projenin çelik kapı, yangın kapısı ve bina giriş kapısı ihtiyacının
+            tamamını tek çatı altında karşılıyor; ölçü alımından üretime, montajdan teslimata kadar her adımı biz
+            yönetiyoruz. Müteahhit ve taşeron firmalarımız için bu, tek bir muhatap, tek bir fatura ve sıfır
+            koordinasyon derdi anlamına geliyor.
+          </p>
+        </article>
       </div>
     </section>
   </main>
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap");
+
     .references-hero-inner {
       text-align: center;
     }
@@ -175,66 +141,68 @@ const references = [
       font-weight: 700;
     }
 
-    .references-list-section {
+    .references-note-section {
       padding: clamp(34px, 7vw, 84px) 0;
     }
 
-    .references-frame {
-      border-radius: 22px;
-      border: 1px solid #e5dfd4;
-      background: linear-gradient(180deg, #fffdfa 0%, #f8f4ec 100%);
-      box-shadow: 0 20px 44px rgba(23, 18, 9, 0.08);
-      overflow: hidden;
+    .paper-note {
+      position: relative;
+      width: min(100%, 860px);
+      margin-inline: auto;
+      background-color: #faf7f2;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      padding: 56px 64px;
+      border-radius: 2px;
+      box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.10),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+      transform: rotate(-0.4deg);
     }
 
-    .references-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .paper-note::before {
+      content: "";
+      position: absolute;
+      left: 40px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: rgba(180, 130, 110, 0.25);
     }
 
-    .reference-item {
-      display: grid;
-      grid-template-columns: 62px minmax(0, 1fr);
-      border-bottom: 1px solid #ece5d9;
-      transition: background 0.2s ease;
+    .paper-note h2 {
+      margin: 0 0 28px;
+      font-family: "Kalam", cursive;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: #3d3530;
+      letter-spacing: -0.3px;
+      line-height: 1.3;
     }
 
-    .reference-item:last-child {
-      border-bottom: none;
+    .paper-note hr {
+      border: none;
+      border-top: 1px solid rgba(100, 70, 50, 0.18);
+      margin: 0 0 28px;
+      width: 60%;
     }
 
-    .reference-item:hover {
-      background: rgba(199, 131, 43, 0.05);
+    .paper-note p {
+      margin: 0 0 24px;
+      font-family: "Kalam", cursive;
+      font-size: 1.125rem;
+      line-height: 1.9;
+      color: #4a3f38;
+      text-align: justify;
+      hyphens: auto;
     }
 
-    .reference-index {
-      border-right: 1px solid #ece5d9;
-      display: grid;
-      place-items: center;
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      color: #c7832b;
-      letter-spacing: 0.04em;
-      font-size: 13px;
-      background: rgba(255, 255, 255, 0.62);
+    .paper-note p:last-child {
+      margin-bottom: 0;
     }
 
-    .reference-content {
-      padding: 20px 22px;
-      display: grid;
-      gap: 6px;
-    }
-
-    .reference-content h2 {
-      margin: 0;
-      font-size: clamp(17px, 2vw, 21px);
-      letter-spacing: -0.2px;
-      color: #181512;
-      font-weight: 600;
-      font-style: italic;
-      font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
-      line-height: 1.35;
+    .paper-note p strong {
+      color: #2e2420;
+      font-weight: 700;
     }
 
     @media (max-width: 680px) {
@@ -247,18 +215,22 @@ const references = [
         padding: 10px 14px;
       }
 
-      .reference-item {
-        grid-template-columns: 48px minmax(0, 1fr);
+      .paper-note {
+        padding: 36px 24px 36px 40px;
+        transform: rotate(0deg);
       }
 
-      .reference-content {
-        padding: 14px 14px 14px 15px;
+      .paper-note::before {
+        left: 28px;
+      }
+
+      .paper-note h2 {
+        font-size: 1.4rem;
+      }
+
+      .paper-note p {
+        font-size: 1rem;
       }
     }
   </style>
 </BaseLayout>
-
-
-
-
-
