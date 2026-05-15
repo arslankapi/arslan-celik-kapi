@@ -433,7 +433,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="section-head centered references-head">
       <div class="section-label">Referanslar</div>
       <h2 class="section-title">60 farklı firmada 500’ün üzerinde üretimle güçlü bir referans ağı oluşturduk</h2>
-      <p class="section-desc">Konut, ticari yapı ve proje bazlı uygulamalarda tamamladığımız işlerden seçili örnekleri inceleyerek üretim kalitemizi yakından görebilirsiniz.</p>
+            <div class="home-reference-logos" aria-label="Seçili referans logoları">
+        <img src="/images/references/normalized/demirhan-logo.png" alt="Demirhan logosu" loading="lazy" decoding="async" />
+        <img src="/images/references/normalized/logobeyazson.png" alt="Logobeyazson logosu" loading="lazy" decoding="async" />
+        <img src="/images/references/normalized/ciloglu.png" alt="Çiloğlu logosu" loading="lazy" decoding="async" />
+      </div>
     </div>
     <div class="references-cta">
       <a href="/projeler/" class="btn-primary">Projeleri İncele</a>
@@ -578,7 +582,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
           <div>
             <div class="ci-label">E-posta</div>
-            <div class="ci-val">info@arslancelikkapi.com</div>
+            <div class="ci-val">arslancelikkapi@outlook.com</div>
           </div>
         </div>
         <div class="contact-info-item">
@@ -1223,6 +1227,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     text-align: center !important;
   }
   .references-head .section-desc { max-width: 840px; }
+  .home-reference-logos {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(24px, 4vw, 54px);
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .home-reference-logos img {
+    display: block;
+    width: clamp(140px, 14vw, 210px);
+    max-height: 68px;
+    object-fit: contain;
+    filter: grayscale(100%) contrast(112%);
+    opacity: 0.95;
+  }
   .references .section-head {
     width: 100%;
     margin-left: auto;
@@ -1839,6 +1860,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .section-head { flex-direction: column; align-items: flex-start; }
     .featured-head,
     .blog-head,
+    .home-reference-logos {
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .home-reference-logos img {
+      width: min(42vw, 178px);
+      max-height: 58px;
+    }
     .references .section-head.centered,
     .why-us .section-head.centered,
     .installation-quality-head {
@@ -1906,6 +1935,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 </style>
 </BaseLayout>
+
+
+
 
 
 

@@ -1,0 +1,122 @@
+﻿---
+import { referenceLogos } from "../data/reference-logos";
+
+const logos = referenceLogos;
+---
+
+<section class="reference-logos-section" aria-labelledby="reference-logos-title">
+  <div class="container">
+    <div class="reference-logos-header">
+      <h2 id="reference-logos-title">Referans Firmalar</h2>
+      <p>Projelerimizde birlikte çalıştığımız iş ortaklarımızdan seçili logo görünümü.</p>
+    </div>
+
+    <div class="reference-logos-grid" role="list">
+      {
+        logos.map((logo) => (
+          <article class="reference-logo-card" role="listitem">
+            <img src={logo.src} alt={`${logo.name} logosu`} loading="lazy" decoding="async" />
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .reference-logos-section {
+    padding: clamp(30px, 5vw, 64px) 0;
+  }
+
+  .reference-logos-header {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  .reference-logos-header h2 {
+    margin: 0;
+    color: #14110d;
+    font-size: clamp(24px, 2.2vw, 36px);
+    font-family: "Manrope", sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .reference-logos-header p {
+    margin: 10px auto 0;
+    max-width: 760px;
+    color: #5d5750;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .reference-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .reference-logo-card {
+    height: 142px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    background: #ffffff;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+  }
+
+  .reference-logo-card img {
+    max-width: 75%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    opacity: 0.95;
+    filter: grayscale(100%) contrast(105%);
+    transition: filter 0.2s ease, opacity 0.2s ease;
+  }
+
+  .reference-logo-card:hover {
+    border-color: rgba(0, 0, 0, 0.16);
+  }
+
+  .reference-logo-card:hover img {
+    opacity: 1;
+    filter: grayscale(100%) contrast(115%);
+  }
+
+  @media (max-width: 1024px) {
+    .reference-logos-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .reference-logo-card {
+      height: 132px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .reference-logos-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .reference-logo-card {
+      height: 112px;
+      padding: 12px;
+      border-radius: 9px;
+    }
+
+    .reference-logo-card img {
+      max-width: 80%;
+      max-height: 72%;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .reference-logos-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

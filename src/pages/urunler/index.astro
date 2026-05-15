@@ -8,6 +8,12 @@ const categoryMap = {
   "bina-giris-kapisi": "Bina Giriş Kapısı",
 } as const;
 
+const badgeClassMap = {
+  "celik-kapi": "badge-orange",
+  "bina-giris-kapisi": "badge-mustard",
+  "yangin-kapisi": "badge-yellow",
+} as const;
+
 const hashOrder = (value: string) => {
   let hash = 0;
   for (let i = 0; i < value.length; i += 1) {
@@ -79,34 +85,33 @@ const whatsappQuoteUrl =
 
         {products.length > 0 ? (
           <>
-            <div class="products-grid">
+            <div class="cards-grid">
               {products.map((product) => (
                 <article class="product-card" data-category={product.data.category}>
-                  <div class="product-image-wrap" style="background:#fff;">
-                    <img class="product-image" src={product.data.image} alt={`${product.data.title} görseli`} loading="lazy" />
-                  </div>
-                  <div class="product-body">
-                    <span class="product-category">{categoryMap[product.data.category]}</span>
-                    <h3 class="product-title">{product.data.title}</h3>
-                    <p class="product-code">Model Kodu: {product.data.modelCode}</p>
-                    <p class="product-summary">{product.data.shortDescription}</p>
-                    <div class="product-meta">
-                      <div class="meta-item">
-                        <span class="meta-label">Ölçü</span>
-                        <span class="meta-value">{product.data.size}</span>
-                      </div>
-                      <div class="meta-item">
-                        <span class="meta-label">Renk</span>
-                        <span class="meta-value">{product.data.color}</span>
-                      </div>
-                      <div class="meta-item" style="grid-column: 1 / -1;">
-                        <span class="meta-label">Malzeme</span>
-                        <span class="meta-value">{product.data.material}</span>
-                      </div>
+                  <a class="card-image-link" href={`/urunler/${product.slug}/`}>
+                    <div class="card-image-wrap">
+                      <img src={product.data.image} alt={`${product.data.title} görseli`} loading="lazy" />
                     </div>
-                    <div class="product-actions">
-                      <a class="product-link" href={`/urunler/${product.slug}/`}>Detay Sayfası</a>
-                      <a class="btn-primary" href={`/urunler/${product.slug}/`}>İncele</a>
+                    <div class="hover-overlay"><span>Ürünü İncele →</span></div>
+                  </a>
+
+                  <div class="card-body">
+                    <span class:list={["category-badge", badgeClassMap[product.data.category]]}>{categoryMap[product.data.category]}</span>
+                    <h3 class="product-title">{product.data.title}</h3>
+                    <p class="product-material">{product.data.material}</p>
+                    <p class="model-code">Model: {product.data.modelCode}</p>
+                    <p class="product-desc">{product.data.shortDescription}</p>
+
+                    <div class="specs-box" aria-label="Ölçü ve renk bilgisi">
+                      <div class="spec-item">
+                        <span class="spec-label">Ölçü</span>
+                        <span class="spec-value">{product.data.size}</span>
+                      </div>
+                      <span class="spec-dot" aria-hidden="true"></span>
+                      <div class="spec-item">
+                        <span class="spec-label">Renk</span>
+                        <span class="spec-value">{product.data.color}</span>
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -120,12 +125,11 @@ const whatsappQuoteUrl =
       </div>
     </section>
   </main>
-
   <style>
-    .products-grid .product-card,
-    .products-grid .product-body,
-    .products-grid .product-image-wrap {
-      background: #ffffff !important;
+    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap");
+
+    .products-section {
+      font-family: "DM Sans", sans-serif;
     }
 
     .products-hero .hero-inner h1 {
@@ -139,7 +143,246 @@ const whatsappQuoteUrl =
       margin-inline: auto;
       text-align: center;
     }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 0.5px solid rgba(0, 0, 0, 0.12);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.18s;
+    }
+
+    .product-card:hover {
+      border-color: rgba(0, 0, 0, 0.28);
+      transform: translateY(-3px);
+      box-shadow: none;
+    }
+
+    .card-image-link {
+      display: block;
+      position: relative;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .card-image-wrap {
+      width: 100%;
+      height: clamp(320px, 28vw, 420px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #ffffff;
+      transition: opacity 0.2s;
+      padding: 16px;
+      border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .card-image-wrap img {
+      width: 92%;
+      height: 92%;
+      max-width: 92%;
+      max-height: 92%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+
+    .card-image-link:hover .card-image-wrap {
+      opacity: 0.92;
+    }
+
+    .card-image-link:hover .hover-overlay {
+      opacity: 1;
+    }
+
+    .hover-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .hover-overlay span {
+      background: rgba(255, 255, 255, 0.92);
+      color: #222;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .card-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .category-badge {
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.01em;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .badge-orange {
+      background: #d5852f;
+      color: #ffffff;
+      border: 0.5px solid #b86b1e;
+    }
+
+    .badge-mustard {
+      background: #b38a1f;
+      color: #ffffff;
+      border: 0.5px solid #916f14;
+    }
+
+    .badge-yellow {
+      background: #d1b531;
+      color: #ffffff;
+      border: 0.5px solid #ad9524;
+    }
+
+    .product-title {
+      font-family: "DM Serif Display", serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #1a1a1a;
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .product-material {
+      font-size: 11px;
+      color: #6b6b6b;
+      margin: 0;
+    }
+
+    .model-code {
+      font-size: 10.5px;
+      color: #9b9b9b;
+      margin: 0;
+    }
+
+    .product-desc {
+      font-size: 11.5px;
+      color: #5c5c5c;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .specs-box {
+      background: #f5f4f1;
+      border: 0.5px solid rgba(0, 0, 0, 0.08);
+      border-radius: 6px;
+      padding: 7px 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .spec-label {
+      color: #9b9b9b;
+      font-size: 10.5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .spec-value {
+      color: #1a1a1a;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    .spec-dot {
+      width: 3px;
+      height: 3px;
+      background: #c8c8c4;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: inline-block;
+    }
+
+    @media (max-width: 960px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card-image-wrap {
+        height: clamp(280px, 44vw, 360px);
+        padding: 14px;
+      }
+
+      .card-image-wrap img {
+        width: 90%;
+        height: 90%;
+        max-width: 90%;
+        max-height: 90%;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .cards-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .card-image-wrap {
+        height: clamp(260px, 64vw, 320px);
+        padding: 12px;
+      }
+
+      .card-image-wrap img {
+        width: 90%;
+        height: 90%;
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .card-body {
+        padding: 11px 12px 13px;
+        gap: 6px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-image-wrap {
+        height: clamp(280px, 78vw, 340px);
+      }
+    }
   </style>
+
 
   <script is:inline>
     const categoryNav = document.querySelector(".category-nav");
@@ -172,4 +415,8 @@ const whatsappQuoteUrl =
     }
   </script>
 </BaseLayout>
+
+
+
+
 

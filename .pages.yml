@@ -1,25 +1,23 @@
-media:
+﻿media:
   input: public/images
   output: /images
 actions:
   - name: deploy-site
-    label: Siteyi Yayınla
+    label: Siteyi YayÄ±nla
     workflow: deploy-turhost.yml
     ref: current
     cancelable: false
 content:
   - name: products
-    label: Ürünler
+    label: ÃœrÃ¼nler
     type: collection
     path: src/content/products
-    filename:
-      template: "{title}.md"
-      field: create
+    filename: "{slug}.md"
     view:
       fields: [title, modelCode, category]
     fields:
       - name: title
-        label: Ürün Adı
+        label: ÃœrÃ¼n AdÄ±
         type: string
         required: true
       - name: modelCode
@@ -33,17 +31,17 @@ content:
         options:
           values:
             - value: celik-kapi
-              label: Çelik Kapı
+              label: Ã‡elik KapÄ±
             - value: yangin-kapisi
-              label: Yangın Kapısı
+              label: YangÄ±n KapÄ±sÄ±
             - value: bina-giris-kapisi
-              label: Bina Giriş Kapısı
+              label: Bina GiriÅŸ KapÄ±sÄ±
       - name: shortDescription
-        label: Kısa Açıklama
+        label: KÄ±sa AÃ§Ä±klama
         type: text
         required: true
       - name: size
-        label: Ölçü
+        label: Ã–lÃ§Ã¼
         type: string
         required: true
       - name: color
@@ -55,14 +53,14 @@ content:
         type: string
         required: true
       - name: image
-        label: Görsel
+        label: GÃ¶rsel
         type: image
         required: true
         options:
           path: products
           extensions: [jpg, jpeg, png, webp]
       - name: gallery
-        label: Ürün Galerisi
+        label: ÃœrÃ¼n Galerisi
         type: image
         list: true
         required: false
@@ -70,7 +68,7 @@ content:
           path: products
           extensions: [jpg, jpeg, png, webp]
       - name: features
-        label: Öne Çıkan Özellikler
+        label: Ã–ne Ã‡Ä±kan Ã–zellikler
         type: string
         list: true
         required: false
@@ -79,7 +77,7 @@ content:
         type: boolean
         default: false
       - name: body
-        label: Ürün Açıklaması
+        label: ÃœrÃ¼n AÃ§Ä±klamasÄ±
         type: rich-text
         options:
           format: markdown
@@ -88,26 +86,24 @@ content:
     label: Blog
     type: collection
     path: src/content/blog
-    filename:
-      template: "{title}.md"
-      field: create
+    filename: "{slug}.md"
     view:
       fields: [title, publishedAt]
     fields:
       - name: title
-        label: Başlık
+        label: BaÅŸlÄ±k
         type: string
         required: true
       - name: excerpt
-        label: Özet
+        label: Ã–zet
         type: text
         required: true
       - name: publishedAt
-        label: Yayın Tarihi
+        label: YayÄ±n Tarihi
         type: string
         required: true
       - name: cover
-        label: Kapak Görseli
+        label: Kapak GÃ¶rseli
         type: image
         required: true
         options:
@@ -118,7 +114,7 @@ content:
         type: boolean
         default: false
       - name: body
-        label: İçerik
+        label: Ä°Ã§erik
         type: rich-text
         options:
           format: markdown

@@ -12,10 +12,12 @@
     "cms:proxy": "npx decap-server",
     "dev:cms": "npx decap-server",
     "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "logos:normalize": "node scripts/normalize-reference-logos.mjs"
   },
   "devDependencies": {
     "astro": "^5.13.5",
+    "sharp": "^0.34.5",
     "wrangler": "^4.90.0"
   },
   "dependencies": {
