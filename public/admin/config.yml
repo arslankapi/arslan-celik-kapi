@@ -1,4 +1,4 @@
-local_backend: true
+﻿local_backend: true
 
 backend:
   name: github
@@ -10,6 +10,11 @@ public_folder: /images/uploads
 
 site_url: /
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
   - name: products
     label: Ürünler
@@ -18,6 +23,7 @@ collections:
     extension: md
     format: frontmatter
     slug: "{{slug}}"
+    summary: "{{title}} - {{modelCode}}"
     fields:
       - { label: "Ürün Adı", name: "title", widget: "string" }
       - { label: "Model Kodu", name: "modelCode", widget: "string" }
@@ -32,19 +38,19 @@ collections:
       - { label: "Ölçü", name: "size", widget: "string" }
       - { label: "Renk", name: "color", widget: "string" }
       - { label: "Malzeme", name: "material", widget: "string" }
-      - { label: "Kapak Görseli", name: "image", widget: "image" }
-      - label: "Galeri"
+      - { label: "Görsel", name: "image", widget: "image" }
+      - label: "Ürün Galerisi"
         name: "gallery"
         widget: "list"
         required: false
         field: { label: "Görsel", name: "item", widget: "image" }
-      - label: "Özellikler"
+      - label: "Öne Çıkan Özellikler"
         name: "features"
         widget: "list"
         required: false
         field: { label: "Özellik", name: "item", widget: "string" }
       - { label: "Taslak", name: "draft", widget: "boolean", default: false }
-      - { label: "Detay İçeriği", name: "body", widget: "markdown", required: false }
+      - { label: "Ürün Açıklaması", name: "body", widget: "markdown", required: false }
 
   - name: blog
     label: Blog
@@ -53,6 +59,7 @@ collections:
     extension: md
     format: frontmatter
     slug: "{{slug}}"
+    summary: "{{title}} - {{publishedAt}}"
     fields:
       - { label: "Başlık", name: "title", widget: "string" }
       - { label: "Özet", name: "excerpt", widget: "text" }
