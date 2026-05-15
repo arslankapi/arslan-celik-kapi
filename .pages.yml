@@ -1,15 +1,17 @@
-﻿media:
+media:
   input: public/images
   output: /images
+
 actions:
   - name: deploy-site
-    label: Siteyi YayÄ±nla
+    label: Siteyi Yayınla
     workflow: deploy-turhost.yml
     ref: current
     cancelable: false
+
 content:
   - name: products
-    label: ÃœrÃ¼nler
+    label: Ürünler
     type: collection
     path: src/content/products
     filename: "{slug}.md"
@@ -17,7 +19,7 @@ content:
       fields: [title, modelCode, category]
     fields:
       - name: title
-        label: ÃœrÃ¼n AdÄ±
+        label: Ürün Adı
         type: string
         required: true
       - name: modelCode
@@ -31,17 +33,17 @@ content:
         options:
           values:
             - value: celik-kapi
-              label: Ã‡elik KapÄ±
+              label: Çelik Kapı
             - value: yangin-kapisi
-              label: YangÄ±n KapÄ±sÄ±
+              label: Yangın Kapısı
             - value: bina-giris-kapisi
-              label: Bina GiriÅŸ KapÄ±sÄ±
+              label: Bina Giriş Kapısı
       - name: shortDescription
-        label: KÄ±sa AÃ§Ä±klama
+        label: Kısa Açıklama
         type: text
         required: true
       - name: size
-        label: Ã–lÃ§Ã¼
+        label: Ölçü
         type: string
         required: true
       - name: color
@@ -53,14 +55,14 @@ content:
         type: string
         required: true
       - name: image
-        label: GÃ¶rsel
+        label: Görsel
         type: image
         required: true
         options:
           path: products
           extensions: [jpg, jpeg, png, webp]
       - name: gallery
-        label: ÃœrÃ¼n Galerisi
+        label: Ürün Galerisi
         type: image
         list: true
         required: false
@@ -68,7 +70,7 @@ content:
           path: products
           extensions: [jpg, jpeg, png, webp]
       - name: features
-        label: Ã–ne Ã‡Ä±kan Ã–zellikler
+        label: Öne Çıkan Özellikler
         type: string
         list: true
         required: false
@@ -77,7 +79,7 @@ content:
         type: boolean
         default: false
       - name: body
-        label: ÃœrÃ¼n AÃ§Ä±klamasÄ±
+        label: Ürün Açıklaması
         type: rich-text
         options:
           format: markdown
@@ -91,19 +93,19 @@ content:
       fields: [title, publishedAt]
     fields:
       - name: title
-        label: BaÅŸlÄ±k
+        label: Başlık
         type: string
         required: true
       - name: excerpt
-        label: Ã–zet
+        label: Özet
         type: text
         required: true
       - name: publishedAt
-        label: YayÄ±n Tarihi
+        label: Yayın Tarihi
         type: string
         required: true
       - name: cover
-        label: Kapak GÃ¶rseli
+        label: Kapak Görseli
         type: image
         required: true
         options:
@@ -114,7 +116,7 @@ content:
         type: boolean
         default: false
       - name: body
-        label: Ä°Ã§erik
+        label: İçerik
         type: rich-text
         options:
           format: markdown
