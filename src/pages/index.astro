@@ -1,6 +1,14 @@
 ﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import heroMainDoor from "../assets/home/hero-main-door.png";
+import showcase01 from "../assets/home/showcase-01.png";
+import showcase02 from "../assets/home/showcase-02.png";
+import showcase03 from "../assets/home/showcase-03.png";
+import deliveryMarmara from "../assets/home/marmara-ucretsiz-teslimat-kurulum.jpeg";
+import technicalCutaway from "../assets/home/ozellik-kesit-v2.png";
+import projectProduction from "../assets/home/proje-bazli-uretim.jpeg";
 
 const featuredProductSlugs = [
   "ars-114",
@@ -44,7 +52,7 @@ const featuredProducts = featuredProductSlugs
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Ana menü">
         <a href="/" class="active">Anasayfa</a>
         <a href="/urunler/">Ürünler</a>
         <a href="/hakkimizda/">Hakkımızda</a>
@@ -64,6 +72,7 @@ const featuredProducts = featuredProductSlugs
   </div>
 </header>
 
+<main id="main-content">
 <!-- HERO -->
 <section class="hero">
   <div class="container">
@@ -93,12 +102,15 @@ const featuredProducts = featuredProductSlugs
 
       <div class="hero-visual">
         <div class="hero-img-wrap">
-          <img
+          <Image
             class="hero-main-image"
-            src="/images/hero/hero-main-door.png"
+            src={heroMainDoor}
             alt="Arslan Çelik Kapı ürün görseli"
             loading="eager"
             decoding="async"
+            fetchpriority="high"
+            widths={[480, 720, 960, 1280]}
+            sizes="(max-width: 680px) 100vw, (max-width: 1200px) 45vw, 520px"
           />
         </div>
       </div>
@@ -141,10 +153,12 @@ const featuredProducts = featuredProductSlugs
 
             <div class="door-staggered-grid">
       <a class="door-staggered-card" href="/urunler/?kategori=celik-kapi" aria-label="Çelik kapı ürünlerini incele">
-        <img
-          src="/images/showcase/showcase-01.png"
+        <Image
+          src={showcase01}
           alt="Çelik kapı modeli"
           loading="lazy"
+          widths={[480, 768, 1024]}
+          sizes="(max-width: 992px) 100vw, 33vw"
         />
         <div class="door-staggered-overlay">
           <span class="door-staggered-index">01</span>
@@ -155,10 +169,12 @@ const featuredProducts = featuredProductSlugs
       </a>
 
       <a class="door-staggered-card" href="/urunler/?kategori=yangin-kapisi" aria-label="Yangın kapısı ürünlerini incele">
-        <img
-          src="/images/showcase/showcase-02.png"
+        <Image
+          src={showcase02}
           alt="Yangın kapısı modeli"
           loading="lazy"
+          widths={[480, 768, 1024]}
+          sizes="(max-width: 992px) 100vw, 33vw"
         />
         <div class="door-staggered-overlay">
           <span class="door-staggered-index">02</span>
@@ -169,10 +185,12 @@ const featuredProducts = featuredProductSlugs
       </a>
 
       <a class="door-staggered-card" href="/urunler/?kategori=bina-giris-kapisi" aria-label="Bina giriş kapısı ürünlerini incele">
-        <img
-          src="/images/showcase/showcase-03.png"
+        <Image
+          src={showcase03}
           alt="Bina giriş kapısı modeli"
           loading="lazy"
+          widths={[480, 768, 1024]}
+          sizes="(max-width: 992px) 100vw, 33vw"
         />
         <div class="door-staggered-overlay">
           <span class="door-staggered-index">03</span>
@@ -244,10 +262,12 @@ const featuredProducts = featuredProductSlugs
   <div class="container">
     <div class="delivery-banner-grid">
       <div class="delivery-banner-card">
-        <img
-          src="/images/sections/marmara-ucretsiz-teslimat-kurulum.jpeg"
+        <Image
+          src={deliveryMarmara}
           alt="İstanbul ve Marmara bölgesinde ücretsiz teslimat ve kurulum hizmeti"
           loading="lazy"
+          widths={[640, 900, 1280, 1600]}
+          sizes="(max-width: 992px) 100vw, 62vw"
         />
       </div>
       <aside class="delivery-banner-copy">
@@ -320,13 +340,15 @@ const featuredProducts = featuredProductSlugs
 
     <div class="installation-quality-grid">
       <div class="installation-quality-media">
-        <img
-          src="/images/sections/ozellik-kesit-v2.png"
+        <Image
+          src={technicalCutaway}
           alt="Uzman ekip ile çelik kapı montaj ve teslimat süreci"
           width="1086"
           height="1448"
           loading="lazy"
           decoding="async"
+          widths={[420, 640, 900]}
+          sizes="(max-width: 992px) 100vw, 48vw"
         />
       </div>
 
@@ -365,12 +387,14 @@ const featuredProducts = featuredProductSlugs
     <div class="projects-inner">
       <div class="projects-visual">
         <div class="project-production-media">
-          <img
+          <Image
             class="project-production-image"
-            src="/images/sections/proje-bazli-uretim.jpeg"
+            src={projectProduction}
             alt="Proje bazlı üretim için çelik kapı görseli"
             loading="lazy"
             decoding="async"
+            widths={[420, 640, 900]}
+            sizes="(max-width: 992px) 100vw, 40vw"
           />
         </div>
       </div>
@@ -620,21 +644,21 @@ const featuredProducts = featuredProductSlugs
         <p class="form-desc">Formu doldurun, ekibimiz kısa sürede iletişime geçsin.</p>
         <div class="form-row">
           <div class="form-group">
-            <label>Ad Soyad</label>
-            <input type="text" placeholder="Adınız Soyadınız">
+            <label for="home-name">Ad Soyad</label>
+            <input id="home-name" name="name" type="text" autocomplete="name" placeholder="Adınız Soyadınız" required>
           </div>
           <div class="form-group">
-            <label>Telefon *</label>
-            <input type="tel" placeholder="0541 643 06 13">
+            <label for="home-phone">Telefon *</label>
+            <input id="home-phone" name="phone" type="tel" autocomplete="tel" placeholder="0541 643 06 13" required>
           </div>
         </div>
         <div class="form-group">
-          <label>E-posta</label>
-          <input type="email" placeholder="ornek@email.com">
+          <label for="home-email">E-posta</label>
+          <input id="home-email" name="email" type="email" autocomplete="email" placeholder="ornek@email.com">
         </div>
         <div class="form-group">
-          <label>İlgilendiğiniz Kategori</label>
-          <select>
+          <label for="home-category">İlgilendiğiniz Kategori</label>
+          <select id="home-category" name="category">
             <option value="" disabled selected>Seçiniz</option>
             <option>Çelik Kapı Modelleri</option>
             <option>Yangın Kapı Modelleri</option>
@@ -643,12 +667,12 @@ const featuredProducts = featuredProductSlugs
           </select>
         </div>
         <div class="form-group">
-          <label>Ölçü Bilgisi (opsiyonel)</label>
-          <input type="text" placeholder="Örn: 90×210 cm veya özel ölçü">
+          <label for="home-size">Ölçü Bilgisi (opsiyonel)</label>
+          <input id="home-size" name="size" type="text" placeholder="Örn: 90×210 cm veya özel ölçü">
         </div>
         <div class="form-group">
-          <label>Mesajınız</label>
-          <textarea placeholder="Projeniz veya ihtiyacınız hakkında bilgi verin..."></textarea>
+          <label for="home-message">Mesajınız</label>
+          <textarea id="home-message" name="message" placeholder="Projeniz veya ihtiyacınız hakkında bilgi verin..." required></textarea>
         </div>
         <button class="btn-primary form-submit" type="submit">Teklif Talebi Gönder</button>
       </form>
@@ -656,19 +680,19 @@ const featuredProducts = featuredProductSlugs
   </div>
 </section>
 
+</main>
 <script is:inline>
   const homeForm = document.getElementById("home-whatsapp-form");
   if (homeForm) {
     homeForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      const fields = homeForm.querySelectorAll("input, select, textarea");
-      const name = fields[0]?.value?.trim() ?? "";
-      const phone = fields[1]?.value?.trim() ?? "";
-      const email = fields[2]?.value?.trim() ?? "";
-      const category = fields[3]?.value?.trim() ?? "";
-      const size = fields[4]?.value?.trim() ?? "";
-      const message = fields[5]?.value?.trim() ?? "";
+      const name = document.getElementById("home-name")?.value?.trim() ?? "";
+      const phone = document.getElementById("home-phone")?.value?.trim() ?? "";
+      const email = document.getElementById("home-email")?.value?.trim() ?? "";
+      const category = document.getElementById("home-category")?.value?.trim() ?? "";
+      const size = document.getElementById("home-size")?.value?.trim() ?? "";
+      const message = document.getElementById("home-message")?.value?.trim() ?? "";
 
       if (!name || !phone || !message) {
         alert("Lütfen Ad Soyad, Telefon ve Mesaj alanlarını doldurun.");
@@ -693,7 +717,6 @@ const featuredProducts = featuredProductSlugs
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap");
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
