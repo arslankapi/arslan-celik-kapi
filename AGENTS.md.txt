@@ -1,0 +1,12 @@
+# AGENTS.md
+
+## Project Rules
+
+- This is an Astro static website.
+- Do not redesign UI.
+- Focus on performance and accessibility.
+- Prefer astro:assets for image optimization.
+- Preserve Turkish content.
+- Do not rename routes unnecessarily.
+- Always run npm run build after major edits.
+- Keep SEO structure intact.

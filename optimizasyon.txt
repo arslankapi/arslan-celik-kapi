@@ -1,0 +1,365 @@
+Astro ile yazılmış Arslan Çelik Kapı web sitesini Google PageSpeed / Lighthouse sonuçlarına göre optimize et.
+
+HEDEF:
+- Mobil performans skorunu 90+ seviyesine çıkarmak.
+- LCP değerini 12.7 sn’den mümkünse 2.5–4 sn aralığına düşürmek.
+- FCP değerini 3.6 sn’den 1.8–2.5 sn aralığına düşürmek.
+- Toplam sayfa ağırlığını özellikle görseller üzerinden ciddi şekilde azaltmak.
+- Erişilebilirlik skorunu 87’den 95+ seviyesine çıkarmak.
+- SEO skoru zaten 100, bunu bozmadan ilerle.
+
+ÖNEMLİ:
+Sitenin tasarımını, renk paletini, içerik düzenini ve mevcut marka hissini bozma. Sadece performans, erişilebilirlik, HTML semantiği ve küçük teknik hataları düzelt.
+
+1) GÖRSEL OPTİMİZASYONU — EN KRİTİK KONU
+
+PageSpeed analizinde en büyük problem görseller:
+- /images/showcase/showcase-01.png yaklaşık 2.296 KB
+- /images/showcase/showcase-03.png yaklaşık 2.290 KB
+- /images/showcase/showcase-02.png yaklaşık 1.903 KB
+- /images/hero/hero-main-door.png yaklaşık 1.889 KB
+- /images/sections/marmara-ucretsiz-teslimat-kurulum.jpeg yaklaşık 306 KB
+- /images/logo/logo-mark.png yaklaşık 13 KB
+
+Bu görseller çok büyük. Şunları yap:
+
+A) PNG/JPEG görselleri modern formata dönüştür:
+- AVIF üret.
+- WebP fallback üret.
+- Gerekiyorsa eski PNG/JPEG dosyalarını koru ama HTML’de doğrudan ağır PNG kullanma.
+- Hero ve showcase görselleri için maksimum kalite dengesi:
+  - AVIF quality: 55–65
+  - WebP quality: 70–78
+  - JPEG fallback gerekiyorsa quality: 75 civarı
+
+B) Responsive image üret:
+Her büyük görsel için şu genişliklerde varyasyon üret:
+- 320w
+- 480w
+- 768w
+- 1024w
+- 1280w
+
+C) Astro’da mümkünse `astro:assets` Image/Picture component kullan:
+- `Picture` ile avif + webp + fallback yapı kur.
+- `srcset` ve `sizes` doğru tanımlansın.
+- Büyük görselleri tarayıcıya tek parça 1080x1448 PNG olarak göndermeyi bırak.
+
+D) Görsel görüntüleme boyutlarına göre optimize et:
+Analizde hero görseli ekranda yaklaşık 660x880 görünüyor ama dosya 1083x1448 civarında.
+Showcase görselleri ekranda yaklaşık 634x845 görünüyor ama dosya 1086x1448 civarında.
+Bu nedenle:
+- Masaüstünde gereğinden büyük görsel indirilmesin.
+- Mobilde 320–480 genişlikli görsel indirilsin.
+- `sizes` değerleri gerçek layout’a göre yazılsın.
+
+Örnek mantık:
+Hero görseli için:
+sizes="(max-width: 768px) 80vw, 660px"
+
+Showcase görselleri için:
+sizes="(max-width: 768px) 85vw, 634px"
+
+E) LCP görseli özel optimize edilsin:
+LCP görseli büyük ihtimalle:
+`/images/hero/hero-main-door.png`
+
+Bu görsel için:
+- `loading="eager"` kalsın.
+- `decoding="async"` kalsın.
+- `fetchpriority="high"` ekle.
+- Görsel HTML içinde ilk dokümanda bulunabilir olmalı.
+- CSS background-image olarak kullanılmasın.
+- Lazy load yapılmasın.
+- `width` ve `height` açıkça verilsin.
+- Aspect ratio korunarak layout shift engellensin.
+
+Örnek:
+<img
+  class="hero-main-image"
+  src="..."
+  srcset="..."
+  sizes="(max-width: 768px) 80vw, 660px"
+  width="660"
+  height="880"
+  alt="Arslan Çelik Kapı ürün görseli"
+  loading="eager"
+  decoding="async"
+  fetchpriority="high"
+/>
+
+F) Lazy loading:
+- Hero görseli lazy olmayacak.
+- Logo eager olabilir ama çok küçük optimize edilmeli.
+- Sayfanın altındaki tüm görseller lazy olacak.
+- Showcase bölümü ilk ekranda görünmüyorsa lazy kalsın.
+- İlk ekranda görünüyorsa ilk showcase görseli için loading stratejisini dikkatli belirle.
+
+G) Tüm img elementlerine width ve height ekle:
+PageSpeed “Resim öğelerinin açıkça belirtilmiş width ve height değerleri yok” diyor.
+Tüm img etiketlerinde:
+- width
+- height
+- aspect-ratio
+tanımla.
+
+2) GOOGLE FONTS / FONT PERFORMANSI
+
+PageSpeed’te Google Fonts yaklaşık 212 KB ek yük ve render-blocking yaratıyor.
+Şunları yap:
+
+A) Google Fonts’u mümkünse kaldır veya self-host et.
+- Fontları lokal `/public/fonts/` altına al.
+- CSS içinde `@font-face` ile tanımla.
+- `font-display: swap` kullan.
+
+B) Kullanılan font ağırlıklarını azalt:
+Şu anda çok fazla woff2 dosyası indiriliyor.
+Sadece gerekli font weight’leri bırak:
+- 400
+- 600
+- 700
+
+Gereksiz 300, 500, 800, 900 gibi weight’ler varsa kaldır.
+
+C) İki farklı Google Fonts ailesi kullanılıyorsa sadeleştir:
+- Mümkünse tek font ailesi kullan.
+- Başlık ve gövde için ayrı font şart değilse tek aileye düşür.
+- Sistem font stack alternatifi de düşünülebilir:
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+D) Eğer Google Fonts kalacaksa:
+- Tek request’e indir.
+- `display=swap` olduğundan emin ol.
+- Preconnect zaten var, koru.
+Ama öncelik self-host olmalı.
+
+3) RENDER-BLOCKING CSS AZALTMA
+
+PageSpeed iki CSS dosyasını render-blocking gösteriyor:
+- /_astro/_slug_.BqwOB8f5.css
+- /_astro/index.CsK6v9Cq.css
+
+Bunlar çok büyük değil ama render path’i etkiliyor.
+
+Şunları yap:
+- Kullanılmayan CSS varsa temizle.
+- Global CSS’i şişirmeden component bazlı tut.
+- Kritik üst alan CSS’i mümkünse inline veya minimum tut.
+- Blog/product slug CSS’leri ana sayfada gereksiz yükleniyorsa route-level CSS ayrımı kontrol edilsin.
+- Ana sayfada sadece gerçekten kullanılan stiller yüklensin.
+
+Özellikle kontrol et:
+- Blog detay sayfası CSS’i ana sayfaya sızıyor mu?
+- Ürün detay CSS’i ana sayfaya sızıyor mu?
+- Bütün site CSS’i tek dosyada gereksiz taşınıyor mu?
+
+4) ACCESSIBILITY DÜZELTMELERİ
+
+PageSpeed erişilebilirlik skoru 87. Şunları düzelt:
+
+A) Select elementlerine label ekle:
+Analizde `<select>` için ilişkili label bulunmadığı yazıyor.
+
+Şu tarz yapı kullan:
+<label for="product-category-filter">Ürün kategorisi seçiniz</label>
+<select id="product-category-filter" name="category">
+  ...
+</select>
+
+Eğer görsel olarak label görünmesin isteniyorsa `.sr-only` class kullan ama label DOM’da olsun.
+
+B) Renk kontrastlarını düzelt:
+Kontrast problemi olan alanlar:
+- `.btn-primary`
+- `.stat-label`
+- `.stats-bar`
+- `.section-label`
+- `.category-badge.badge-mustard`
+- `.model-code`
+- `.spec-label`
+- `.blog-cat`
+- `.blog-date`
+- `.blog-read`
+- `.ci-label`
+- `.form-desc`
+- Footer copyright
+
+Bu alanlarda metin/background kontrastını WCAG AA seviyesine çıkar:
+- Normal metin için minimum 4.5:1
+- Büyük metin için minimum 3:1
+
+Özellikle hardal/turuncu zemin üzerinde beyaz metin varsa sorun yaratabilir.
+Gerekirse:
+- Hardal zemin koyulaştır.
+- Metni siyah/koyu lacivert yap.
+- Gri metinleri biraz koyulaştır.
+- Şeffaf/opaklık verilmiş metinlerde opacity azaltımını kaldır.
+
+C) Heading sıralamasını düzelt:
+Analizde başlık sırası hatası var:
+- “Malzeme Seçimi” h4
+- Footer’daki “KURUMSAL” h4
+
+Başlık hiyerarşisini semantik hale getir:
+- Sayfada tek bir h1 olsun.
+- Ana bölümler h2 olsun.
+- Bölüm alt başlıkları h3 olsun.
+- h2’den direkt h4’e atlama olmasın.
+- Footer başlıkları görsel olarak küçük kalabilir ama semantik olarak gerekiyorsa h2/h3/h4 yerine `<p class="footer-title">` kullanılabilir.
+
+Footer’daki “KURUMSAL” gibi başlıklar gerçek doküman heading hiyerarşisine katkı sağlamıyorsa h4 yerine:
+<p class="footer-heading">KURUMSAL</p>
+kullan.
+
+D) Main landmark ekle:
+PageSpeed “Dokümanda ana belirgin işaret yok” diyor.
+Layout içinde header’dan sonra içerik şu şekilde sarılmalı:
+
+<header>...</header>
+<main id="main-content">
+  ...
+</main>
+<footer>...</footer>
+
+E) Skip link ekle:
+Sayfanın en başına erişilebilirlik için:
+<a href="#main-content" class="skip-link">Ana içeriğe geç</a>
+
+CSS:
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  z-index: 9999;
+}
+.skip-link:focus {
+  left: 8px;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+F) Özdeş bağlantılar aynı amaca sahip olmalı:
+Analizde “Özdeş bağlantılar aynı amaca sahiptir” uyarısı var.
+Aynı link metni farklı hedeflere gidiyorsa metni ayırt edici hale getir.
+Örneğin birden fazla “Ürünü İncele” varsa:
+- Görsel olarak yine “Ürünü İncele” yazabilir.
+- Ama aria-label ekle:
+<a href="/urunler/ars-413/" aria-label="ARS-413 Bina Giriş Kapısı ürününü incele">
+  Ürünü İncele
+</a>
+
+Blog kartlarında:
+<a aria-label="Çelik Kapı Modelleri ve Fiyatları yazısını oku">
+  Devamını Oku
+</a>
+
+5) CONSOLE ERROR DÜZELT
+
+PageSpeed konsolda şu hatayı yakalamış:
+TypeError: Cannot set properties of null (setting 'textContent')
+
+Bu, JavaScript’in DOM’da olmayan bir elementi seçip `textContent` değiştirmeye çalıştığını gösteriyor.
+
+Yapılacaklar:
+- Ana sayfadaki inline scriptleri kontrol et.
+- `document.querySelector(...)` veya `getElementById(...)` ile alınan element null olabilir.
+- Her DOM manipülasyonundan önce null kontrolü ekle.
+- Script, ilgili elementin olmadığı sayfalarda çalışmamalı.
+- Script gerekiyorsa component/sayfa bazlı çalışmalı.
+
+Örnek düzeltme:
+const target = document.querySelector('.some-selector');
+if (target) {
+  target.textContent = '...';
+}
+
+Form, filtre, ürün kartı veya sayaç scriptlerinde özellikle kontrol et.
+
+6) FORM VE SELECT SEMANTİĞİ
+
+Ana sayfadaki teklif formunu kontrol et:
+- Her input için label olmalı.
+- label `for` ile input `id` eşleşmeli.
+- Select için label eklenmeli.
+- Placeholder label yerine kullanılmamalı.
+- Telefon input’u type="tel" olabilir.
+- E-posta input’u varsa type="email" olmalı.
+- Gerekli alanlarda `required` kullanılmalı.
+- Form WhatsApp’a yönleniyorsa submit davranışı erişilebilir ve hatasız olmalı.
+
+7) CLS / LAYOUT STABILITY
+
+CLS şu anda iyi: 0.002.
+Bunu bozma.
+
+Dikkat:
+- Görsellere width/height eklerken layout kayması yaratma.
+- Image container’larda aspect-ratio kullan.
+- Kart yüksekliklerini dengeli tut.
+- Lazy image placeholder alanı önceden ayrılmış olmalı.
+
+8) CSS VE UI DETAYLARI
+
+Tasarımı bozmadan şu iyileştirmeleri yap:
+- Ürün kartlarındaki görseller aynı oranda ve aynı alan içinde gösterilsin.
+- Görseller ezilmesin.
+- `object-fit: contain` veya ürün yapısına göre `object-fit: cover` dikkatli kullanılsın.
+- Kapı görselleri için genelde `object-fit: contain` daha doğru.
+- Kartlarda image wrapper sabit aspect-ratio ile gelsin.
+- Mobilde yatay taşma kontrol edilsin.
+- Gereksiz box-shadow, blur, backdrop-filter gibi pahalı CSS efektleri varsa azalt.
+
+9) ASTRO BUILD / OUTPUT KONTROLÜ
+
+Değişikliklerden sonra:
+- `npm run build` çalışmalı.
+- Build hatasız tamamlanmalı.
+- `npm run preview` ile site kontrol edilmeli.
+- Console’da hata kalmamalı.
+- Ana sayfa, ürünler, ürün detay, blog, blog detay, projeler ve iletişim sayfaları kontrol edilmeli.
+
+10) BEKLENEN SONUÇ
+
+Optimizasyondan sonra:
+- Hero görseli AVIF/WebP responsive olarak yüklenmeli.
+- Büyük PNG dosyaları doğrudan HTML’de kullanılmamalı.
+- LCP görselinde `fetchpriority="high"` olmalı.
+- Sayfa toplam ağırlığı ciddi şekilde düşmeli.
+- Google Fonts render-blocking etkisi azaltılmalı veya kaldırılmalı.
+- Tüm img elementlerinde width/height olmalı.
+- Select/input label sorunları çözülmeli.
+- Kontrast sorunları çözülmeli.
+- Başlık sıralaması düzelmeli.
+- `<main>` landmark eklenmeli.
+- Console’daki `Cannot set properties of null` hatası çözülmeli.
+
+11) KONTROL LİSTESİ
+
+İş bitince bana şu formatta rapor ver:
+
+- Optimize edilen görseller:
+  - Eski format / yeni format
+  - Yaklaşık eski boyut / yeni boyut
+- Değiştirilen Astro componentleri:
+  - Dosya adı
+  - Yapılan değişiklik
+- Erişilebilirlik düzeltmeleri:
+  - Label
+  - Kontrast
+  - Heading
+  - Main landmark
+  - Aria-label
+- JavaScript hata düzeltmesi:
+  - Hangi dosyada hata vardı?
+  - Nasıl çözüldü?
+- Build sonucu:
+  - npm run build başarılı mı?
+- Beklenen Lighthouse etkisi:
+  - LCP düşüşü
+  - Toplam ağ yükü düşüşü
+  - Accessibility artışı
+
+Kod değişikliklerinde gereksiz refactor yapma. Sadece performans, erişilebilirlik ve teknik kalite için gerekli düzenlemeleri yap.

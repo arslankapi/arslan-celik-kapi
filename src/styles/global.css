@@ -1147,8 +1147,31 @@ footer {
 }
 
 @media (max-width: 1024px) {
+  .header-inner {
+    min-height: 72px;
+    padding: 12px 0;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
   .header-links {
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .header-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .header-links a {
+    flex: 0 0 auto;
   }
 
   .header-phone {
@@ -1219,6 +1242,16 @@ footer {
     flex-shrink: 0;
     white-space: nowrap;
     padding: 10px 14px;
+    width: auto;
+  }
+
+  .header-links {
+    gap: 6px;
+  }
+
+  .header-links a {
+    padding: 6px 10px;
+    font-size: 13.5px;
   }
 
   .logo-text .brand {
@@ -1306,3 +1339,4 @@ footer {
 .skip-link:focus {
   top: 12px;
 }
+

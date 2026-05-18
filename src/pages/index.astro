@@ -18,7 +18,7 @@ const featuredProductSlugs = [
   "ares-yangın-kapısı",
   "duman-yangın-kapısı",
   "asil-bina-giriş-kapısı",
-  "avlu-bina-giriş-kapısı",
+  "porta-bina-giriş-kapısı",
 ] as const;
 
 const categoryMap = {
@@ -1951,7 +1951,18 @@ const featuredProducts = featuredProductSlugs
   @media (max-width: 992px) {
     .container { padding: 0 24px; }
     .header-inner { height: auto; min-height: 72px; padding: 14px 0; flex-wrap: wrap; }
-    nav { order: 3; width: 100%; justify-content: flex-start; overflow-x: auto; padding-bottom: 2px; }
+    nav {
+      order: 3;
+      width: 100%;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a { flex: 0 0 auto; }
     .header-right { margin-left: auto; }
     .hero { padding: 70px 0 56px; }
     .hero-inner { grid-template-columns: 1fr; }
@@ -2144,6 +2155,7 @@ const featuredProducts = featuredProductSlugs
   }
 </style>
 </BaseLayout>
+
 
 
 
