@@ -2,7 +2,7 @@
 
 backend:
   name: github
-  repo: UlasCanSaru/arslan-celik-kapi
+  repo: arslankapi/arslan-celik-kapi
   branch: master
 
 media_folder: public/images/uploads
@@ -67,3 +67,4 @@ collections:
       - { label: "Kapak Görseli", name: "cover", widget: "image" }
       - { label: "Taslak", name: "draft", widget: "boolean", default: false }
       - { label: "İçerik", name: "body", widget: "markdown" }
+
