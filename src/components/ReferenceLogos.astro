@@ -77,6 +77,11 @@ const logos = referenceLogos;
     transition: filter 0.2s ease, opacity 0.2s ease;
   }
 
+  .reference-logo-card img[src*="cakmak-insaat-logo-light-turuncu.png"] {
+    opacity: 1;
+    filter: grayscale(100%) contrast(165%) brightness(0.55);
+  }
+
   .reference-logo-card:hover {
     border-color: rgba(0, 0, 0, 0.16);
   }
@@ -84,6 +89,10 @@ const logos = referenceLogos;
   .reference-logo-card:hover img {
     opacity: 1;
     filter: grayscale(100%) contrast(115%);
+  }
+
+  .reference-logo-card:hover img[src*="cakmak-insaat-logo-light-turuncu.png"] {
+    filter: grayscale(100%) contrast(180%) brightness(0.5);
   }
 
   @media (max-width: 1024px) {
