@@ -1,14 +1,14 @@
-export const referenceLogos = [
+﻿export const referenceLogos = [
   {
     "name": "1631331195022",
     "src": "/images/references/normalized/1631331195022.png"
   },
   {
-    "name": "Baytar İnsaat Web Logo",
+    "name": "Baytar Ä°nsaat Web Logo",
     "src": "/images/references/normalized/baytar-insaat-web-logo.png"
   },
   {
-    "name": "Cakmak İnsaat Logo Light Turuncu",
+    "name": "Aktif Yapi Logo",
     "src": "/images/references/normalized/cakmak-insaat-logo-light-turuncu.png"
   },
   {
@@ -32,15 +32,15 @@ export const referenceLogos = [
     "src": "/images/references/normalized/find-2018831-22158942.png"
   },
   {
-    "name": "İmages",
+    "name": "Ä°mages",
     "src": "/images/references/normalized/images.png"
   },
   {
-    "name": "İmages 2",
+    "name": "Ä°mages 2",
     "src": "/images/references/normalized/images-2.png"
   },
   {
-    "name": "İndir",
+    "name": "Ä°ndir",
     "src": "/images/references/normalized/indir.png"
   },
   {
@@ -48,3 +48,4 @@ export const referenceLogos = [
     "src": "/images/references/normalized/logo.png"
   }
 ] as const;
+
