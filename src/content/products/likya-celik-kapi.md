@@ -9,4 +9,8 @@ material: Yanmaz Sac + Panic Bar Uyumlu
 image: /images/likya-celik-kapi.jpg
 draft: false
 ---
-108
+Ahşap görünümlü maun kaplama üzerine ceviz renk çalışması yapılmıştır.  
+
+Merkezi kilit sistemi 7 noktalı mono kilit sistem kullanılmıştır.  
+
+İç kısmı lake.
