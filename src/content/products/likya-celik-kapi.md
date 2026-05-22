@@ -2,7 +2,7 @@
 title: Likya Çelik Kapı
 modelCode: ARS-108
 category: celik-kapi
-shortDescription: A101 ÜRÜN AÇIKLAMASI KISA AÇIKLAMA
+shortDescription: ARS-108 ÜRÜN AÇIKLAMASI KISA AÇIKLAMA
 size: 100 x 210 cm
 color: AÇIK MEŞE
 material: Yanmaz Sac + Panic Bar Uyumlu
