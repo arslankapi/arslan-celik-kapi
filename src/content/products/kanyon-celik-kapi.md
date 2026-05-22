@@ -9,4 +9,8 @@ material: Çelik
 image: /images/kanyon-celik-kapi.jpg
 draft: false
 ---
-ARS-106 Çelik Kapı Açıklaması
+Ahşap görünümlü maon kaplama üzerine ceviz renk çalışması yapılmıştır.  
+
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+
+İç kısmı lake.
