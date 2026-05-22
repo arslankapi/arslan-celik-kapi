@@ -13,4 +13,8 @@ features:
   - Yüksek dayanımlı menteşe sistemi
 draft: false
 ---
-ARS-105 Çelik Kapı Detay Ürün Açıklaması
+Ahşap görünümlü kayın kaplama üzerine ceviz renk çalışması yapılmıştır.  
+
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+
+İç kısmı lake.
