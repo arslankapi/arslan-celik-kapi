@@ -13,4 +13,8 @@ features:
   - Yüksek dayanımlı menteşe sistemi
 draft: false
 ---
-ARS-204 Çelik Kapı Detay Ürün Açıklaması
+Ahşap görünümlü kayın kaplama üzerine kabartma model uygulanmıştır.  
+
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+
+İç kısmı lake.
