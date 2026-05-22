@@ -1,6 +1,6 @@
 ---
 title: "Atlas Çelik Kapı "
-modelCode: ARS-123
+modelCode: ARS-103
 category: celik-kapi
 shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarlanmış yangın kapısı.
 size: 100 x 210 cm
@@ -13,4 +13,4 @@ features:
   - Yüksek dayanımlı menteşe sistemi
 draft: false
 ---
-ARS-123 Çelik Kapı Detay Ürün Açıklamasıs
+ARS-103 Çelik Kapı Detay Ürün Açıklamasıs
