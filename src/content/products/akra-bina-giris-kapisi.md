@@ -9,4 +9,9 @@ material: Metal
 image: /images/akra-bina-giris-kapisi.jpg
 draft: false
 ---
-ARS-405
+dış kompakt, yağmur güneşten etkilenmemsi için  
+iç kısımları lake   
+camlar 8 mm füme kırılmaz cam   
+istenilen ölçüye göre  
+otomatik kilit sistemli  
+istenilen aksesuar ile renk-kapı kolu değişmektedir.
