@@ -1,6 +1,6 @@
 ---
 title: "Verona Çelik Kapı "
-modelCode: ARS-134
+modelCode: ARS-301
 category: celik-kapi
 shortDescription: ARS-301 Çelik Kapı Açıklaması
 size: 90*210 cm
