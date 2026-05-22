@@ -13,4 +13,8 @@ features:
   - Kurumsal yapılara uygun güvenlik çizgisi
 draft: false
 ---
-ARS-109 Çelik Kapı Detay Ürün Açıklaması
+Ahşap görünümlü tik kaplama üzerine doğal renk çalışması yapılmıştır.  
+
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+
+İç kısmı lake.
