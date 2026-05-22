@@ -1,12 +1,12 @@
 ---
 title: "Vega Çelik Kapı "
-modelCode: "ARS-136 "
+modelCode: ARS-208
 category: celik-kapi
-shortDescription: ARS-136 Çelik Kapı Açıklaması
+shortDescription: ARS-208 Çelik Kapı Açıklaması
 size: 90 x 210 cm
 color: Ceviz
 material: Çelik
-image: /images/uploads/chatgpt-image-30-nis-2026-15_13_53.png
+image: /images/vega-celik-kapi.jpg
 draft: false
 ---
-ARS-136 Çelik Kapı Açıklaması
+ARS-208 Çelik Kapı Açıklaması
