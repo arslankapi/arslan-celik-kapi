@@ -13,4 +13,8 @@ features:
   - Yüksek dayanımlı menteşe sistemi
 draft: false
 ---
-ARS-203 Çelik Kapı Detay Ürün Açıklamasıs
+Ahşap görünümlü maun kaplama üzerine kaplama ceviz renk çalışması yapılmıştır.  
+
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+
+İç kısmı lake.
