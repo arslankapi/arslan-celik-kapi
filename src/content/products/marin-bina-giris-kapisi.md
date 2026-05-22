@@ -6,7 +6,7 @@ shortDescription: ARS-406
 size: 150 x 210 cm
 color: Cam
 material: Çelik
-image: /images/marin-bina-giriş-kapisi.jpg
+image: /images/marin-bina-giris-kapisi.jpg
 draft: false
 ---
 ARS-406
