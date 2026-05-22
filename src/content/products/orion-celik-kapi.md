@@ -1,16 +1,16 @@
 ---
 title: "Orion Çelik Kapı "
-modelCode: ARS-127
+modelCode: "ARS-203 "
 category: celik-kapi
 shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarlanmış yangın kapısı.
 size: 100 x 210 cm
 color: Kırmızı
 material: Yanmaz Sac + Panic Bar Uyumlu
-image: /images/uploads/whatsapp-image-2026-04-27-at-21.20.46-7-.jpeg
+image: /images/orion-celik-kapi.jpg
 features:
   - Panic bar donanımıyla tam uyum
   - Kurumsal yapılara uygun güvenlik çizgisi
   - Yüksek dayanımlı menteşe sistemi
 draft: false
 ---
-ARS-127 Çelik Kapı Detay Ürün Açıklamasıs
+ARS-203 Çelik Kapı Detay Ürün Açıklamasıs
