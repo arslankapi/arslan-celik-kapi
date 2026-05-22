@@ -9,4 +9,10 @@ material: Çelik + Yanmaz Boya
 image: /images/uploads/chatgpt-image-13-may-2026-05_45_33.png
 draft: false
 ---
-AK-457 Yangın Kapısı Açıklaması
+Ürünümüz sertifikalı üretilmektedir.  
+Ral 9010 renkte üretilmektedir.  
+EI60, EI90 ve EI120 dayanım isterlerine göre üretim yapılmaktadır.  
+Duman sızdırmaz özellikte imal edilmektedir.  
+Kendinden hidrolikli   
+Panik bar girişli  
+İsteğe göre kilitlenebilir üretilmektedir.  
