@@ -105,6 +105,51 @@ import "../styles/global.css";
     <script>
       const yearEl = document.getElementById("year");
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      document.querySelectorAll(".header-inner").forEach((headerInner, index) => {
+        const nav = headerInner.querySelector('nav[aria-label="Ana menü"]');
+        if (!nav) return;
+
+        nav.classList.add("header-links");
+        nav.id ||= `site-menu-${index + 1}`;
+
+        let toggle = headerInner.querySelector(".menu-toggle");
+        if (!toggle) {
+          toggle = document.createElement("button");
+          toggle.type = "button";
+          toggle.className = "menu-toggle";
+          toggle.setAttribute("aria-label", "Menüyü aç veya kapat");
+          toggle.setAttribute("aria-controls", nav.id);
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.innerHTML = "<span></span><span></span><span></span>";
+
+          const logo = headerInner.querySelector(".logo");
+          if (logo && logo.nextSibling) {
+            headerInner.insertBefore(toggle, logo.nextSibling);
+          } else {
+            headerInner.insertBefore(toggle, nav);
+          }
+        }
+
+        const closeMenu = () => {
+          nav.classList.remove("is-open");
+          toggle?.setAttribute("aria-expanded", "false");
+        };
+
+        toggle.addEventListener("click", () => {
+          const willOpen = !nav.classList.contains("is-open");
+          nav.classList.toggle("is-open", willOpen);
+          toggle?.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        });
+
+        nav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 1024) closeMenu();
+        });
+      });
     </script>
 
   </body>

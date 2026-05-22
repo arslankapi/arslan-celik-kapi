@@ -146,6 +146,29 @@ a {
   gap: 10px;
 }
 
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #2f2f2f;
+  background: #171717;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #d9d4ce;
+  display: block;
+}
+
 .header-links a {
   color: #b0aba5;
   text-decoration: none;
@@ -1154,24 +1177,29 @@ footer {
     flex-wrap: wrap;
   }
 
-  .header-links {
-    order: 3;
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 2px;
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+    order: 2;
   }
 
-  .header-links::-webkit-scrollbar {
+  .header-links {
+    order: 4;
+    width: 100%;
     display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 10px;
+    border-top: 1px solid #232323;
+  }
+
+  .header-links.is-open {
+    display: flex;
   }
 
   .header-links a {
-    flex: 0 0 auto;
+    width: 100%;
+    padding: 10px 12px;
   }
 
   .header-phone {
@@ -1245,12 +1273,17 @@ footer {
     width: auto;
   }
 
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
   .header-links {
-    gap: 6px;
+    gap: 4px;
   }
 
   .header-links a {
-    padding: 6px 10px;
+    padding: 9px 10px;
     font-size: 13.5px;
   }
 

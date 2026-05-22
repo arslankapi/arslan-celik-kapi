@@ -52,7 +52,7 @@ const featuredProducts = featuredProductSlugs
         </div>
       </a>
 
-      <nav aria-label="Ana menü">
+      <nav class="header-links" aria-label="Ana menü">
         <a href="/" class="active">Anasayfa</a>
         <a href="/urunler/">Ürünler</a>
         <a href="/hakkimizda/">Hakkımızda</a>
@@ -297,7 +297,7 @@ const featuredProducts = featuredProductSlugs
     <div class="featured-cards-grid">
       {featuredProducts.map((product) => (
         <article class="product-card" data-category={product.data.category} data-product-slug={product.slug}>
-          <a class="card-image-link" href={`/urunler/${product.slug}/`}>
+          <a class="card-image-link" href={`/${product.slug}/`}>
             <div class="card-image-wrap">
               <img src={product.data.image} alt={`${product.data.title} görseli`} loading="lazy" />
             </div>
@@ -782,8 +782,8 @@ const featuredProducts = featuredProductSlugs
   .logo-text .brand { font-size: 16px; font-weight: 800; color: var(--white); letter-spacing: -0.3px; }
   .logo-text .sub { font-size: 11px; color: var(--text-muted); font-weight: 400; letter-spacing: 0.5px; text-transform: uppercase; }
 
-  nav { display: flex; gap: 4px; flex: 1; justify-content: center; }
-  nav a {
+  .header-links { display: flex; gap: 4px; flex: 1; justify-content: center; }
+  .header-links a {
     color: #B0ABA5;
     text-decoration: none;
     font-size: 14.5px;
@@ -793,8 +793,8 @@ const featuredProducts = featuredProductSlugs
     transition: color .2s, background .2s;
     white-space: nowrap;
   }
-  nav a:hover { color: var(--white); background: var(--black3); }
-  nav a.active { color: var(--gold); }
+  .header-links a:hover { color: var(--white); background: var(--black3); }
+  .header-links a.active { color: var(--gold); }
 
   .header-right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
   .header-phone {
@@ -1956,18 +1956,20 @@ const featuredProducts = featuredProductSlugs
   @media (max-width: 992px) {
     .container { padding: 0 24px; }
     .header-inner { height: auto; min-height: 72px; padding: 14px 0; flex-wrap: wrap; }
-    nav {
-      order: 3;
+    .header-links {
+      display: none;
+      order: 4;
       width: 100%;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding-bottom: 2px;
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 10px;
+      border-top: 1px solid #232323;
     }
-    nav::-webkit-scrollbar { display: none; }
-    nav a { flex: 0 0 auto; }
+    .header-links.is-open { display: flex; }
+    .header-links a {
+      width: 100%;
+      padding: 10px 12px;
+    }
     .header-right { margin-left: auto; }
     .hero { padding: 70px 0 56px; }
     .hero-inner { grid-template-columns: 1fr; }

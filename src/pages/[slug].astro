@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 
 const categoryMap = {
@@ -158,8 +158,8 @@ const relatedProducts = (await getCollection("products", ({ data }) => !data.dra
                     <p class="product-code">Model Kodu: {related.data.modelCode}</p>
                     <p class="product-summary">{related.data.shortDescription}</p>
                     <div class="product-actions">
-                      <a class="product-link" href={`/urunler/${related.slug}/`}>Detay Sayfası</a>
-                      <a class="btn-primary" href={`/urunler/${related.slug}/`}>İncele</a>
+                      <a class="product-link" href={`/${related.slug}/`}>Detay Sayfası</a>
+                      <a class="btn-primary" href={`/${related.slug}/`}>İncele</a>
                     </div>
                   </div>
                 </article>
