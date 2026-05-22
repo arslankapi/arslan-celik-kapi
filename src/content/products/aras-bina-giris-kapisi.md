@@ -6,7 +6,7 @@ shortDescription: ARS-408
 size: 150 x 210 cm
 color: Meşe
 material: Metal
-image: /images/aras-celik-kapi.jpg
+image: /images/aras-bina-giris-kapisi.jpg
 draft: false
 ---
 ARS-408
