@@ -9,4 +9,6 @@ material: Çelik
 image: /images/arya-celik-kapi.jpg
 draft: false
 ---
-ARS-102 Çelik Kapı Açıklaması
+Ahşap görünümlü kayın kaplama kapıdır.  
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+İç kısmı lake.
