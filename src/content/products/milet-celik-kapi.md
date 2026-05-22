@@ -1,6 +1,6 @@
 ---
 title: "Milet Çelik Kapı "
-modelCode: ARS-135
+modelCode: ARS-110
 category: celik-kapi
 shortDescription: ARS-110 Çelik Kapı Açıklaması
 size: 90 x 210 cm
