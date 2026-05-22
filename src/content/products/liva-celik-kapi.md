@@ -1,6 +1,6 @@
 ---
 title: "Liva Çelik Kapı "
-modelCode: ARS-113
+modelCode: ARS-109
 category: celik-kapi
 shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarlanmış yangın kapısı.
 size: 100 x 210 cm
@@ -13,4 +13,4 @@ features:
   - Kurumsal yapılara uygun güvenlik çizgisi
 draft: false
 ---
-ARS-113 Çelik Kapı Detay Ürün Açıklaması
+ARS-109 Çelik Kapı Detay Ürün Açıklaması
