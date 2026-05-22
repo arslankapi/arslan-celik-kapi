@@ -6,7 +6,7 @@ shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarl
 size: 100 x 210 cm
 color: Kırmızı
 material: Yanmaz Sac + Panic Bar Uyumlu
-image: /images/products/placeholder-door.jpeg
+image: /images/liva-celik-kapi.jpg
 features:
   - Panic bar donanımıyla tam uyum
   - Yüksek dayanımlı menteşe sistemi
