@@ -9,4 +9,8 @@ material: Çelik
 image: /images/zenit-celik-kapi.jpg
 draft: false
 ---
-ARS-302 Çelik Kapı Açıklaması
+Lake üretim metoduyla imal edilmiştir.
+
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+
+İç kısmı lake.
