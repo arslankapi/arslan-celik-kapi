@@ -9,4 +9,6 @@ material: "Çelik Gövde "
 image: /images/alya-celik-kapi.jpg
 draft: false
 ---
-ARS-101 Çelik Kapı Detay Açıklaması
+Ahşap görünümlü tik kaplama kapıdır.  
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+İç kısmı lake.
