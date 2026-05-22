@@ -1,6 +1,6 @@
 ---
 title: "Pergamon Çelik Kapı "
-modelCode: ARS-121
+modelCode: ARS-204
 category: celik-kapi
 shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarlanmış yangın kapısı.
 size: 100 x 210 cm
@@ -13,4 +13,4 @@ features:
   - Yüksek dayanımlı menteşe sistemi
 draft: false
 ---
-ARS-121 Çelik Kapı Detay Ürün Açıklaması
+ARS-204 Çelik Kapı Detay Ürün Açıklaması
