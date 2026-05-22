@@ -13,4 +13,8 @@ features:
   - Yüksek dayanımlı menteşe sistemi
 draft: false
 ---
-ARS-207 Çelik Kapı Detay Ürün Açıklaması
+Lake çıtalı göbekli üretilmektedir.  
+
+Mono blok kilit sistemi 7 noktadan kilitlenebilir.  
+
+İç kısmı lake.
