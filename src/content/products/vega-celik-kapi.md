@@ -9,4 +9,8 @@ material: Çelik
 image: /images/vega-celik-kapi.jpg
 draft: false
 ---
-ARS-208 Çelik Kapı Açıklaması
+Ahşap görünümlü kayın kaplama üzerine kabartma model ceviz renk çalışması yapılmıştır.  
+
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+
+İç kısmı lake.
