@@ -11,6 +11,6 @@ draft: false
 ---
 Lake üretim metoduyla imal edilmiştir.
 
-Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+Mono blok kilit sistemi 7 noktadan kilitlenebilmektedir.
 
 İç kısmı lake.
