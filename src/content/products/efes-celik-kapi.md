@@ -1,6 +1,6 @@
 ---
 title: "Efes Çelik Kapı "
-modelCode: ARS-129
+modelCode: ARS-104
 category: celik-kapi
 shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarlanmış yangın kapısı.
 size: 100 x 210 cm
@@ -13,4 +13,4 @@ features:
   - Yüksek dayanımlı menteşe sistemi
 draft: false
 ---
-ARS-129 Çelik Kapı Detay Ürün Açıklaması
+ARS-104 Çelik Kapı Detay Ürün Açıklaması
