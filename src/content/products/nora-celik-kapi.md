@@ -9,4 +9,8 @@ material: "Çelik Gövde "
 image: /images/nora-celik-kapi.jpg
 draft: false
 ---
-ARS-201 Çelik Kapı Detay Açıklaması
+Ahşap görünümlü maun kaplama üzerine kabartma model yapılmıştır.  
+
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+
+İç kısmı lake.
