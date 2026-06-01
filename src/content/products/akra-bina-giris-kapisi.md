@@ -9,9 +9,10 @@ material: Metal
 image: /images/akra-bina-giris-kapisi.jpg
 draft: false
 ---
-dış kaplama kompakt malzemeden üretilmiştir. Böylece yağmur ve güneşten etkilenmemesi için,   
-iç kısımları lake  
-camlar 8 mm füme kırılmaz cam  
-istenilen ölçüye göre  
-otomatik kilit sistemli  
-istenilen aksesuar ile renk-kapı kolu değişmektedir.
+- **Dış mekâna dayanıklı kompakt panel yüzey** sayesinde yağmur, güneş ve zorlu hava koşullarına karşı uzun ömürlü kullanım sunar.
+- **İç yüzeylerde lake kaplama** tercih edilerek kapıya şık, modern ve estetik bir görünüm kazandırılmıştır.
+- **8 mm füme kırılmaz cam** kullanımı ile hem güvenlik hem de dekoratif görünüm bir arada sağlanır.
+- **Özel ölçü üretim imkânı** sayesinde kapı, projenize ve giriş alanınıza uygun şekilde hazırlanabilir.
+- **Otomatik kilit sistemi** ile güvenlik seviyesi artırılmış, pratik kullanım sağlanmıştır.
+- **Kişiselleştirilebilir renk, kapı kolu ve aksesuar seçenekleri** ile kapı modeli mimari tarza ve kullanıcı tercihine göre özelleştirilebilir.
+
