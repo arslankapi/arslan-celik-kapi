@@ -1073,11 +1073,11 @@ const featuredProducts = featuredProductSlugs
     display: block;
   }
 
-  .featured .product-card[data-product-slug="asil-bina-giriş-kapısı"] .card-image-wrap img {
-    width: 90%;
-    height: 90%;
-    max-width: 90%;
-    max-height: 90%;
+  .featured .product-card[data-product-slug="asil-bina-giris-kapisi"] .card-image-wrap img {
+    width: 84%;
+    height: 84%;
+    max-width: 84%;
+    max-height: 84%;
   }
 
   .featured .card-image-link:hover .card-image-wrap {
@@ -2028,6 +2028,35 @@ const featuredProducts = featuredProductSlugs
 
   @media (max-width: 680px) {
     .container { padding: 0 16px; }
+    .header-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      align-items: center;
+      column-gap: 10px;
+      row-gap: 10px;
+      min-height: 64px;
+    }
+    .logo {
+      min-width: 0;
+      flex: none;
+    }
+    .header-right {
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .header-right .btn-primary {
+      width: auto;
+      padding: 10px 14px;
+    }
+    .menu-toggle {
+      margin-left: 0;
+    }
+    .header-links {
+      grid-column: 1 / -1;
+    }
     .hero { padding: 54px 0 40px; }
     .hero h1 { font-size: 34px; letter-spacing: -0.8px; }
     .hero-ctas { flex-direction: column; }
@@ -2060,6 +2089,26 @@ const featuredProducts = featuredProductSlugs
     .installation-quality-head {
       align-items: center;
       text-align: center;
+    }
+    .featured-head,
+    .featured-head > *,
+    .contact-info,
+    .contact-info > .section-label,
+    .contact-info > .section-title,
+    .contact-info > .section-desc {
+      text-align: center !important;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .featured-head .btn-outline-dark {
+      width: auto !important;
+      align-self: center;
     }
     .blog-head .btn-outline-dark {
       width: auto !important;
@@ -2140,11 +2189,11 @@ const featuredProducts = featuredProductSlugs
       max-width: 90%;
       max-height: 90%;
     }
-    .featured .product-card[data-product-slug="asil-bina-giriş-kapısı"] .card-image-wrap img {
-      width: 88%;
-      height: 88%;
-      max-width: 88%;
-      max-height: 88%;
+    .featured .product-card[data-product-slug="asil-bina-giris-kapisi"] .card-image-wrap img {
+      width: 82%;
+      height: 82%;
+      max-width: 82%;
+      max-height: 82%;
     }
     .featured .card-body {
       padding: 11px 12px 13px;
