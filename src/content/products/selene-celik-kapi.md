@@ -1,4 +1,4 @@
----
+﻿---
 title: "Selene Çelik Kapı "
 modelCode: ARS-205
 category: celik-kapi
@@ -6,7 +6,7 @@ shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarl
 size: 100 x 210 cm
 color: Kırmızı
 material: Yanmaz Sac + Panic Bar Uyumlu
-image: /images/selene-celik-kapi.jpg
+image: /images/products-seo/selene-celik-kapi.jpg
 features:
   - Panic bar donanımıyla tam uyum
   - Kurumsal yapılara uygun güvenlik çizgisi

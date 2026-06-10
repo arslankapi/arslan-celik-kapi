@@ -1,4 +1,4 @@
----
+﻿---
 title: "Hera Çelik Kapı "
 modelCode: ARS-105
 category: celik-kapi
@@ -6,7 +6,7 @@ shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarl
 size: 100 x 210 cm
 color: Kırmızı
 material: Yanmaz Sac + Panic Bar Uyumlu
-image: /images/hera-celik-kapi.jpg
+image: /images/products-seo/hera-celik-kapi.jpg
 features:
   - Panic bar donanımıyla tam uyum
   - Kurumsal yapılara uygun güvenlik çizgisi

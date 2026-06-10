@@ -1,4 +1,4 @@
----
+﻿---
 title: "Pergamon Çelik Kapı "
 modelCode: ARS-204
 category: celik-kapi
@@ -6,7 +6,7 @@ shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarl
 size: 100 x 210 cm
 color: Kırmızı
 material: Yanmaz Sac + Panic Bar Uyumlu
-image: /images/pergamon-celik-kapi.jpg
+image: /images/products-seo/pergamon-celik-kapi.jpg
 features:
   - Panic bar donanımıyla tam uyum
   - Kurumsal yapılara uygun güvenlik çizgisi

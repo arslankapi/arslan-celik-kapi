@@ -1,4 +1,4 @@
----
+﻿---
 title: "Nora Çelik Kapı "
 modelCode: ARS-201
 category: celik-kapi
@@ -6,7 +6,7 @@ shortDescription: ARS-201 Çelik Kapı Açıklaması
 size: 90*210 cm
 color: Meşe
 material: "Çelik Gövde "
-image: /images/nora-celik-kapi.jpg
+image: /images/products-seo/nora-celik-kapi.jpg
 draft: false
 ---
 Ahşap görünümlü maun kaplama üzerine kabartma model yapılmıştır.  

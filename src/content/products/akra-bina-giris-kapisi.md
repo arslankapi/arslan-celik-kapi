@@ -1,4 +1,4 @@
----
+﻿---
 title: Akra Bina Giriş Kapısı
 modelCode: ARS-405
 category: bina-giris-kapisi
@@ -6,7 +6,7 @@ shortDescription: ARS-405
 size: 100 x 210 cm
 color: Meşe
 material: Metal
-image: /images/akra-bina-giris-kapisi.jpg
+image: /images/products-seo/akra-bina-giris-kapisi.jpg
 draft: false
 ---
 - **Dış mekâna dayanıklı kompakt panel yüzey** sayesinde yağmur, güneş ve zorlu hava koşullarına karşı uzun ömürlü kullanım sunar.
@@ -15,4 +15,5 @@ draft: false
 - **Özel ölçü üretim imkânı** sayesinde kapı, projenize ve giriş alanınıza uygun şekilde hazırlanabilir.
 - **Otomatik kilit sistemi** ile güvenlik seviyesi artırılmış, pratik kullanım sağlanmıştır.
 - **Kişiselleştirilebilir renk, kapı kolu ve aksesuar seçenekleri** ile kapı modeli mimari tarza ve kullanıcı tercihine göre özelleştirilebilir.
+
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Ares Yangın Kapısı
 modelCode: AK-453
 category: yangin-kapisi
@@ -6,7 +6,7 @@ shortDescription: AK-453 Açıklama
 size: 90 x 210 cm
 color: Kırmızı
 material: Metal + Yanmaz Boya
-image: /images/uploads/chatgpt-image-13-may-2026-05_39_44.png
+image: /images/products-seo/ares-yangin-kapisi.png
 draft: false
 ---
 Ürünümüz sertifikalı üretilmektedir.  
@@ -22,4 +22,5 @@ Kendinden hidrolikli
 Panik bar girişli  
 
 İsteğe göre kilitlenebilir üretilmektedir.  
+
 

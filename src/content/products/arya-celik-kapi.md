@@ -1,4 +1,4 @@
----
+﻿---
 title: "Arya Çelik Kapı "
 modelCode: ARS-102
 category: celik-kapi
@@ -6,7 +6,7 @@ shortDescription: ARS-102 Çelik Kapı Açıklaması
 size: 90 x 210 cm
 color: Koyu Ceviz
 material: Çelik
-image: /images/arya-celik-kapi.jpg
+image: /images/products-seo/arya-celik-kapi.jpg
 draft: false
 ---
 Ahşap görünümlü kayın kaplama üzerine ceviz renk çalışması yapılmıştır.  
