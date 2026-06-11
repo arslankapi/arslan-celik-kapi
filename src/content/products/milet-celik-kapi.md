@@ -11,4 +11,4 @@ draft: false
 ---
 Ahşap görünümlü tik kaplama kapıdır.  
 Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
-İç kısmı lake.
+İç kısmı lakedir.
