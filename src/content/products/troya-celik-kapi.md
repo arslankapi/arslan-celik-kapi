@@ -17,4 +17,4 @@ Lake çıtalı göbekli üretilmektedir.
 
 Mono blok kilit sistemi 7 noktadan kilitlenebilir.  
 
-İç kısmı lake.
+İç ve dış kısmı lakeden iaml edilmektedir.
