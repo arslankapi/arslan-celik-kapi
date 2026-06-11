@@ -13,4 +13,4 @@ Lake üretim metoduyla imal edilmiştir.
 
 Mono blok kilit sistemi 7 noktadan kilitlenebilmektedir.
 
-İç kısmı lake.
+İç ve dış kısmı lakeden imal edilmiştir.
