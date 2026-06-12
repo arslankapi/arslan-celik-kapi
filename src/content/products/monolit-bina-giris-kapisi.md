@@ -6,7 +6,7 @@ shortDescription: "Monolit Bina Giriş Kapısı, ceviz tonlarındaki yüzeyi ve 
 size: "146 x 220 cm"
 color: "Ceviz"
 material: "Çelik Gövde + Cam Detaylı Ahşap Desenli Yüzey"
-price: 96000
+price: 108000
 image: "/images/products-seo/monolit-bina-giris-kapisi.jpg"
 draft: false
 gallery: []
