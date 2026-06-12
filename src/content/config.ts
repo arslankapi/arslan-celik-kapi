@@ -10,6 +10,7 @@ const products = defineCollection({
     size: z.string(),
     color: z.string(),
     material: z.string(),
+    price: z.union([z.string(), z.number()]).optional(),
     image: z.string(),
     gallery: z.array(z.string()).default([]),
     features: z.array(z.string()).default([]),

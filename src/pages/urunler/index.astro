@@ -14,6 +14,45 @@ const badgeClassMap = {
   "yangin-kapisi": "badge-yellow",
 } as const;
 
+const formatProductPrice = (value: string | number | undefined) => {
+  if (value === undefined || value === null || value === "") return null;
+
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return new Intl.NumberFormat("tr-TR", {
+      style: "currency",
+      currency: "TRY",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  }
+
+  const normalized = String(value)
+    .trim()
+    .replace(/\s+/g, "")
+    .replace(/₺|TL|TRY/gi, "");
+
+  if (!normalized) return null;
+
+  let numeric = normalized;
+  if (numeric.includes(".") && numeric.includes(",")) {
+    numeric = numeric.lastIndexOf(",") > numeric.lastIndexOf(".")
+      ? numeric.replace(/\./g, "").replace(",", ".")
+      : numeric.replace(/,/g, "");
+  } else if (numeric.includes(",")) {
+    numeric = numeric.replace(",", ".");
+  }
+
+  const parsed = Number.parseFloat(numeric);
+  if (!Number.isFinite(parsed)) return null;
+
+  return new Intl.NumberFormat("tr-TR", {
+    style: "currency",
+    currency: "TRY",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(parsed);
+};
+
 const hashOrder = (value: string) => {
   let hash = 0;
   for (let i = 0; i < value.length; i += 1) {
@@ -96,6 +135,7 @@ const whatsappQuoteUrl =
                   </a>
 
                   <div class="card-body">
+                    {product.data.price !== undefined && <p class="product-price">{formatProductPrice(product.data.price)}</p>}
                     <span class:list={["category-badge", badgeClassMap[product.data.category]]}>{categoryMap[product.data.category]}</span>
                     <h3 class="product-title">{product.data.title}</h3>
                     <p class="product-material">{product.data.material}</p>
@@ -228,6 +268,16 @@ const whatsappQuoteUrl =
       display: flex;
       flex-direction: column;
       gap: 7px;
+    }
+
+    .product-price {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1;
+      color: #1a1a1a;
+      letter-spacing: -0.03em;
     }
 
     .category-badge {
@@ -367,6 +417,10 @@ const whatsappQuoteUrl =
       .card-body {
         padding: 11px 12px 13px;
         gap: 6px;
+      }
+
+      .product-price {
+        font-size: 16px;
       }
     }
 

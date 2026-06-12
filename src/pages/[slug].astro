@@ -8,6 +8,45 @@ const categoryMap = {
   "bina-giris-kapisi": "Bina Giriş Kapısı",
 } as const;
 
+const formatProductPrice = (value: string | number | undefined) => {
+  if (value === undefined || value === null || value === "") return null;
+
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return new Intl.NumberFormat("tr-TR", {
+      style: "currency",
+      currency: "TRY",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  }
+
+  const normalized = String(value)
+    .trim()
+    .replace(/\s+/g, "")
+    .replace(/₺|TL|TRY/gi, "");
+
+  if (!normalized) return null;
+
+  let numeric = normalized;
+  if (numeric.includes(".") && numeric.includes(",")) {
+    numeric = numeric.lastIndexOf(",") > numeric.lastIndexOf(".")
+      ? numeric.replace(/\./g, "").replace(",", ".")
+      : numeric.replace(/,/g, "");
+  } else if (numeric.includes(",")) {
+    numeric = numeric.replace(",", ".");
+  }
+
+  const parsed = Number.parseFloat(numeric);
+  if (!Number.isFinite(parsed)) return null;
+
+  return new Intl.NumberFormat("tr-TR", {
+    style: "currency",
+    currency: "TRY",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(parsed);
+};
+
 const whatsappQuoteUrl =
   "https://wa.me/905320605413?text=Merhaba%2C%20Arslan%20%C3%87elik%20Kap%C4%B1%20i%C3%A7in%20teklif%20almak%20istiyorum.";
 
@@ -153,6 +192,7 @@ const relatedProducts = (await getCollection("products", ({ data }) => !data.dra
                     <img class="product-image" src={related.data.image} alt={`${related.data.title} görseli`} loading="lazy" />
                   </div>
                   <div class="product-body">
+                    {related.data.price !== undefined && <p class="product-price">{formatProductPrice(related.data.price)}</p>}
                     <span class="product-category">{categoryMap[related.data.category]}</span>
                     <h4 class="product-title">{related.data.title}</h4>
                     <p class="product-code">Model Kodu: {related.data.modelCode}</p>
@@ -185,6 +225,16 @@ const relatedProducts = (await getCollection("products", ({ data }) => !data.dra
     .product-detail-hero .hero-inner > p {
       max-width: 860px;
       margin-inline: auto;
+    }
+
+    .related-section .product-price {
+      margin: 0 0 6px;
+      font-family: "Manrope", sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1;
+      color: #1a1a1a;
+      letter-spacing: -0.03em;
     }
   </style>
 </BaseLayout>
