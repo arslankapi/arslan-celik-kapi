@@ -6,7 +6,7 @@ shortDescription: "Duru Bina Giriş Kapısı, gümüş gri tonlarındaki yüzeyi
 size: "146 x 220 cm"
 color: "Gümüş Gri"
 material: "Çelik Gövde + Cam Detayı"
-price: 96000
+price: 108000
 image: "/images/products-seo/duru-bina-giris-kapisi.jpg"
 draft: false
 gallery: []
