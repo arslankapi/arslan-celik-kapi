@@ -1,23 +1,19 @@
 ---
-title: "Troya Çelik Kapı "
+title: "Troya Çelik Kapı"
 modelCode: "ARS-207"
 category: "celik-kapi"
-shortDescription: "Acil çıkış yönlendirmesi ve yoğun kullanım için tasarlanmış yangın kapısı."
+shortDescription: "Troya Çelik Kapı, beyaz tonlarındaki lake kaplamalı yüzeyi ve 7 noktadan kilitlenebilen monoblok kilit sistemi ile güvenlik ve dekoratif görünümü bir araya getiren çelik kapı modelidir."
 size: "100 x 210 cm"
-color: "Kırmızı"
-material: "Yanmaz Sac + Panic Bar Uyumlu"
+color: "Beyaz"
+material: "Çelik Gövde + Lake Kaplama"
 price: 60000
 image: "/images/products-seo/troya-celik-kapi.jpg"
 draft: false
 gallery: []
 features:
-  - "Panic bar donanımıyla tam uyum"
-  - "Kurumsal yapılara uygun güvenlik çizgisi"
-  - "Yüksek dayanımlı menteşe sistemi"
+  - "Lake kaplamalı yüzey ile modern ve temiz finisaj"
+  - "7 noktadan kilitlenebilen monoblok kilit sistemi"
+  - "Dekoratif iç yüzey uygulaması"
 ---
 
-Lake çıtalı göbekli üretilmektedir.
-
-Mono blok kilit sistemi 7 noktadan kilitlenebilir.
-
-İç ve dış kısmı lakeden iaml edilmektedir.
+Troya Çelik Kapı, lake kaplamalı yüzeyi sayesinde yaşam alanlarında sıcak ve dengeli bir görünüm sunarken çelik gövde yapısıyla güvenlik standardını destekler. 7 noktadan kilitlenebilen monoblok kilit sistemi ve dekoratif iç yüzey uygulaması, ürünü hem günlük kullanım hem de uzun ömürlü performans açısından güçlü bir çözüme dönüştürür.

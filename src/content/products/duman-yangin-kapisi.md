@@ -2,34 +2,18 @@
 title: "Duman Yangın Kapısı"
 modelCode: "AK-452"
 category: "yangin-kapisi"
-shortDescription: "AK-452 Açıklama"
+shortDescription: "Duman Yangın Kapısı, sertifikalı üretimi, duman sızdırmaz gövde yapısı ve yangın dayanım seçenekleriyle güvenli tahliye senaryoları için geliştirilen yangın kapısı modelidir."
 size: "90 x 210 cm"
 color: "Sarı"
-material: "Metal + Yanmaz Boya"
+material: "Çelik Sac Gövde + Yangına Dayanımlı Elektrostatik Boya"
 price: 45000
 image: "/images/products-seo/duman-yangin-kapisi.jpg"
 draft: false
 gallery: []
 features:
-  - "Ürünümüz sertifikalı üretilmektedir."
-  - "Renk seçeneği Ral paletinden istenilen renkte şartnameye uygun şekilde üretilmektedir."
-  - "EI60, EI90 ve EI120 dayanım isterlerine göre üretim yapılmaktadır."
-  - "Duman sızdırmaz özellikte imal edilmektedir."
-  - "Kendinden hidrolikli"
-  - "Panik bar girişli"
-  - "İsteğe göre kilitlenebilir üretilmektedir."
-  - "Tek veya çift kanat açılabilir üretilmektedir."
+  - "Sertifikalı üretim ve EI60 / EI90 / EI120 dayanım seçenekleri"
+  - "Duman sızdırmaz gövde yapısı ve kendinden hidrolikli kapanma sistemi"
+  - "Panik bar uyumu ve isteğe bağlı kilit seçeneği"
 ---
 
-Ürünümüz sertifikalı üretilmektedir.
- Renk seçeneği Ral paletinden istenilen renkte şartnameye uygun şekilde üretilmektedir.
-EI60, EI90 ve EI120 dayanım isterlerine göre üretim yapılmaktadır.
-
-Duman sızdırmaz özellikte imal edilmektedir.
-
-Kendinden hidrolikli
-
-Panik bar girişli
-
-İsteğe göre kilitlenebilir üretilmektedir.
-Tek veya çift kanat açılabilir üretilmektedir.
+Duman Yangın Kapısı, EI60, EI90 ve EI120 dayanım isterlerine uygun üretilebilen çelik sac gövdesi, duman sızdırmaz yapısı ve kendinden hidrolikli kapanma sistemiyle güvenli kaçış altyapısını destekler. Panik bar uyumu ve şartnameye uygun RAL renk uygulamaları sayesinde farklı proje ihtiyaçlarına uygun olarak hazırlanabilir.

@@ -2,21 +2,18 @@
 title: "Vesta Bina Giriş Kapısı"
 modelCode: "ARS-415"
 category: "bina-giris-kapisi"
-shortDescription: "Bina giriş kapılarımız metrekare bazında 30.000 TL üzerinden fiyatlandırılmakta olup, projenize özel ölçülerde istediğiniz ebatta üretim yapılmaktadır."
+shortDescription: "Vesta Bina Giriş Kapısı, koyu ceviz tonlarındaki yüzeyi ve cam detaylarıyla apartman ve site girişlerinde güvenlik ile mimari görünümü dengeli biçimde sunan bina giriş kapısı modelidir."
 size: "146 x 220 cm"
-color: "Cam"
-material: "Metal"
+color: "Koyu Ceviz"
+material: "Çelik Gövde + Cam Detaylı Ahşap Desenli Yüzey"
 price: 96000
 image: "/images/products-seo/vesta-bina-giris-kapisi.jpg"
 draft: false
 gallery: []
 features:
-  - "Kapımızın standart üretim alanı 3.3 m²'dir."
-  - "Kapımızın metrekare satış fiyatı 32.000 TL'dir."
-  - "İstediğiniz ölçüde özel üretim olarak metrekare fiyatıyla üretim yapmaktayız."
-  - "Kapımızın dış kaplaması kompak malzemeden üretilmiştir."
-  - "İç kaplaması lake malzemeden üretilmiştir."
-  - "Lamine camdan imal edilmektedir."
+  - "146 x 220 cm referans ölçü, projeye özel ebatlarda üretim imkânı"
+  - "Çelik Gövde + Cam Detaylı Ahşap Desenli Yüzey ile yoğun kullanıma uygun dayanımlı gövde yapısı"
+  - "Cam detaylı tasarım ile modern, aydınlık ve mimari cepheyle uyumlu giriş etkisi"
 ---
 
-Bina giriş kapılarımız metrekare bazında 30.000 TL üzerinden fiyatlandırılmakta olup, projenize özel ölçülerde istediğiniz ebatta üretim yapılmaktadır.
+Vesta Bina Giriş Kapısı, 146 x 220 cm referans ölçü üzerinden planlanmakta ve proje ihtiyaçlarına göre özel ebatlarda üretilebilmektedir. Metrekare bazında 30.000 TL fiyatlandırma üzerinden hazırlanan bu model, cam detaylı tasarımı ve dayanımlı çelik gövdesiyle giriş alanlarında uzun ömürlü kullanım ve güçlü bir ilk izlenim sağlar.

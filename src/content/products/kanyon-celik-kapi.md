@@ -1,23 +1,19 @@
 ---
-title: "Kanyon Çelik Kapı "
+title: "Kanyon Çelik Kapı"
 modelCode: "ARS-106"
 category: "celik-kapi"
-shortDescription: "ARS-139 Çelik Kapı Açıklama"
+shortDescription: "Kanyon Çelik Kapı, ceviz tonlarındaki lake kaplamalı yüzeyi ve 14 noktadan kilitlenebilen Kale marka merkezi kilit sistemi ile güvenlik ve dekoratif görünümü bir araya getiren çelik kapı modelidir."
 size: "90 x 210 cm"
-color: "Meşe"
-material: "Çelik"
+color: "Ceviz"
+material: "Çelik Gövde + Maun Desenli Dış Kaplama"
 price: 60000
 image: "/images/products-seo/kanyon-celik-kapi.jpg"
 draft: false
 gallery: []
 features:
-  - "Ahşap görünümlü maon kaplama üzerine ceviz renk çalışması yapılmıştır."
-  - "Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit."
-  - "İç kısmı lake."
+  - "Lake kaplamalı yüzey ile modern ve temiz finisaj"
+  - "14 noktadan kilitlenebilen Kale marka merkezi kilit sistemi"
+  - "Dekoratif iç yüzey uygulaması"
 ---
 
-Ahşap görünümlü maon kaplama üzerine ceviz renk çalışması yapılmıştır.
-
-Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.
-
-İç kısmı lake.
+Kanyon Çelik Kapı, lake kaplamalı yüzeyi sayesinde yaşam alanlarında sıcak ve dengeli bir görünüm sunarken çelik gövde yapısıyla güvenlik standardını destekler. 14 noktadan kilitlenebilen Kale marka merkezi kilit sistemi ve dekoratif iç yüzey uygulaması, ürünü hem günlük kullanım hem de uzun ömürlü performans açısından güçlü bir çözüme dönüştürür.

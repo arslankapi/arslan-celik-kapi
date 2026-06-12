@@ -2,21 +2,18 @@
 title: "Akra Bina Giriş Kapısı"
 modelCode: "ARS-405"
 category: "bina-giris-kapisi"
-shortDescription: "Bina giriş kapılarımız metrekare bazında 30.000 TL üzerinden fiyatlandırılmakta olup, projenize özel ölçülerde istediğiniz ebatta üretim yapılmaktadır."
+shortDescription: "Akra Bina Giriş Kapısı, beyaz tonlarındaki yüzeyi ve cam detaylarıyla apartman ve site girişlerinde güvenlik ile mimari görünümü dengeli biçimde sunan bina giriş kapısı modelidir."
 size: "146 x 220 cm"
-color: "Meşe"
-material: "Metal"
+color: "Beyaz"
+material: "Çelik Gövde + Füme Cam Detayı"
 price: 96000
 image: "/images/products-seo/akra-bina-giris-kapisi.jpg"
 draft: false
 gallery: []
 features:
-  - "- **Dış mekâna dayanıklı kompakt panel yüzey** sayesinde yağmur, güneş ve zorlu hava koşullarına karşı uzun ömürlü kullanım sunar."
-  - "- **İç yüzeylerde lake kaplama** tercih edilerek kapıya şık, modern ve estetik bir görünüm kazandırılmıştır."
-  - "- **8 mm füme kırılmaz cam** kullanımı ile hem güvenlik hem de dekoratif görünüm bir arada sağlanır."
-  - "- **Özel ölçü üretim imkânı** sayesinde kapı, projenize ve giriş alanınıza uygun şekilde hazırlanabilir."
-  - "- **Otomatik kilit sistemi** ile güvenlik seviyesi artırılmış, pratik kullanım sağlanmıştır."
-  - "- **Kişiselleştirilebilir renk, kapı kolu ve aksesuar seçenekleri** ile kapı modeli mimari tarza ve kullanıcı tercihine göre özelleştirilebilir."
+  - "146 x 220 cm referans ölçü, projeye özel ebatlarda üretim imkânı"
+  - "Çelik Gövde + Füme Cam Detayı ile yoğun kullanıma uygun dayanımlı gövde yapısı"
+  - "Cam detaylı tasarım ile modern, aydınlık ve mimari cepheyle uyumlu giriş etkisi"
 ---
 
-Bina giriş kapılarımız metrekare bazında 30.000 TL üzerinden fiyatlandırılmakta olup, projenize özel ölçülerde istediğiniz ebatta üretim yapılmaktadır.
+Akra Bina Giriş Kapısı, 146 x 220 cm referans ölçü üzerinden planlanmakta ve proje ihtiyaçlarına göre özel ebatlarda üretilebilmektedir. Metrekare bazında 30.000 TL fiyatlandırma üzerinden hazırlanan bu model, cam detaylı tasarımı ve dayanımlı çelik gövdesiyle giriş alanlarında uzun ömürlü kullanım ve güçlü bir ilk izlenim sağlar.

@@ -1,31 +1,19 @@
 ---
 title: "Kızıl Kalkan Yangın Kapısı"
-modelCode: "AK-456 "
+modelCode: "AK-456"
 category: "yangin-kapisi"
-shortDescription: "AK-456 Yangın Kapısı Açıklaması"
+shortDescription: "Kızıl Kalkan Yangın Kapısı, sertifikalı üretimi, duman sızdırmaz gövde yapısı ve yangın dayanım seçenekleriyle güvenli tahliye senaryoları için geliştirilen yangın kapısı modelidir."
 size: "90 x 210 cm"
 color: "Kırmızı"
-material: "Çelik Sac + Yanmaz Boya "
+material: "Çelik Sac Gövde + Yangına Dayanımlı Elektrostatik Boya"
 price: 18000
 image: "/images/products-seo/kizil-kalkan-yangin-kapisi.png"
 draft: false
 gallery: []
 features:
-  - "Ürünümüz sertifikalı üretilmektedir."
-  - "Renk seçeneği Ral paletinden istenilen renkte şartnameye uygun şekilde üretilmektedir."
-  - "EI60, EI90 ve EI120 dayanım isterlerine göre üretim yapılmaktadır."
-  - "Duman sızdırmaz özellikte imal edilmektedir."
-  - "Kendinden hidrolikli"
-  - "Panik bar girişli"
-  - "İsteğe göre kilitlenebilir üretilmektedir."
+  - "Sertifikalı üretim ve EI60 / EI90 / EI120 dayanım seçenekleri"
+  - "Duman sızdırmaz gövde yapısı ve kendinden hidrolikli kapanma sistemi"
+  - "Panik bar uyumu ve isteğe bağlı kilit seçeneği"
 ---
 
-Ürünümüz sertifikalı üretilmektedir.
-
- Renk seçeneği Ral paletinden istenilen renkte şartnameye uygun şekilde üretilmektedir.
-
-EI60, EI90 ve EI120 dayanım isterlerine göre üretim yapılmaktadır.
-Duman sızdırmaz özellikte imal edilmektedir.
-Kendinden hidrolikli
-Panik bar girişli
-İsteğe göre kilitlenebilir üretilmektedir.
+Kızıl Kalkan Yangın Kapısı, EI60, EI90 ve EI120 dayanım isterlerine uygun üretilebilen çelik sac gövdesi, duman sızdırmaz yapısı ve kendinden hidrolikli kapanma sistemiyle güvenli kaçış altyapısını destekler. Panik bar uyumu ve şartnameye uygun RAL renk uygulamaları sayesinde farklı proje ihtiyaçlarına uygun olarak hazırlanabilir.

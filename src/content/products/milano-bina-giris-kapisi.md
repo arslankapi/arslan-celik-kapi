@@ -2,16 +2,18 @@
 title: "Milano Bina Giriş Kapısı"
 modelCode: "ARS-419"
 category: "bina-giris-kapisi"
-shortDescription: "Bina giriş kapılarımız metrekare bazında 30.000 TL üzerinden fiyatlandırılmakta olup, projenize özel ölçülerde istediğiniz ebatta üretim yapılmaktadır."
+shortDescription: "Milano Bina Giriş Kapısı, ceviz tonlarındaki yüzeyiyle apartman ve site girişlerinde güvenlik ile mimari görünümü dengeli biçimde sunan bina giriş kapısı modelidir."
 size: "146 x 220 cm"
-color: "Cam"
-material: "Metal"
+color: "Ceviz"
+material: "Çelik Gövde + Ahşap Desenli Yüzey"
 price: 96000
 image: "/images/products-seo/milano-bina-giris-kapisi.jpg"
 draft: false
 gallery: []
 features:
-  - "ARS-419 Bina Giriş Kapısı Açıklaması"
+  - "146 x 220 cm referans ölçü, projeye özel ebatlarda üretim imkânı"
+  - "Çelik Gövde + Ahşap Desenli Yüzey ile yoğun kullanıma uygun dayanımlı gövde yapısı"
+  - "Dekoratif dış yüzey tasarımı ile mimari cepheyle uyumlu ve prestijli görünüm"
 ---
 
-Bina giriş kapılarımız metrekare bazında 30.000 TL üzerinden fiyatlandırılmakta olup, projenize özel ölçülerde istediğiniz ebatta üretim yapılmaktadır.
+Milano Bina Giriş Kapısı, 146 x 220 cm referans ölçü üzerinden planlanmakta ve proje ihtiyaçlarına göre özel ebatlarda üretilebilmektedir. Metrekare bazında 30.000 TL fiyatlandırma üzerinden hazırlanan bu model, dayanımlı çelik gövdesi ve dekoratif dış yüzeyiyle giriş alanlarında uzun ömürlü kullanım ve güçlü bir ilk izlenim sağlar.

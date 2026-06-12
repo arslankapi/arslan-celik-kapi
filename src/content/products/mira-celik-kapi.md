@@ -1,23 +1,19 @@
 ---
-title: "Mira Çelik Kapı "
+title: "Mira Çelik Kapı"
 modelCode: "ARS-111"
 category: "celik-kapi"
-shortDescription: "Acil çıkış yönlendirmesi ve yoğun kullanım için tasarlanmış yangın kapısı."
+shortDescription: "Mira Çelik Kapı, açık meşe tonlarındaki tik desenli dış yüzeyi ve 14 noktadan kilitlenebilen Kale marka merkezi kilit sistemi ile güvenlik ve dekoratif görünümü bir araya getiren çelik kapı modelidir."
 size: "100 x 210 cm"
-color: "Kırmızı"
-material: "Yanmaz Sac + Panic Bar Uyumlu"
+color: "Açık Meşe"
+material: "Çelik Gövde + Tik Desenli Dış Kaplama"
 price: 60000
 image: "/images/products-seo/mira-celik-kapi.jpg"
 draft: false
 gallery: []
 features:
-  - "Panic bar donanımıyla tam uyum"
-  - "Kurumsal yapılara uygun güvenlik çizgisi"
-  - "Yüksek dayanımlı menteşe sistemi"
+  - "Tik desenli dış kaplama ile sıcak ve doğal görünüm"
+  - "14 noktadan kilitlenebilen Kale marka merkezi kilit sistemi"
+  - "Dekoratif iç yüzey uygulaması"
 ---
 
-Ahşap görünümlü tik kaplama üzerine ceviz renk çalışması yapılmıştır.
-
-Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.
-
-İç kısmı lake.
+Mira Çelik Kapı, tik desenli dış yüzeyi sayesinde yaşam alanlarında sıcak ve dengeli bir görünüm sunarken çelik gövde yapısıyla güvenlik standardını destekler. 14 noktadan kilitlenebilen Kale marka merkezi kilit sistemi ve dekoratif iç yüzey uygulaması, ürünü hem günlük kullanım hem de uzun ömürlü performans açısından güçlü bir çözüme dönüştürür.

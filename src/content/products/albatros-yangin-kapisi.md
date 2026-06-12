@@ -1,29 +1,19 @@
 ---
 title: "Albatros Yangın Kapısı"
-modelCode: "AK-457 "
+modelCode: "AK-457"
 category: "yangin-kapisi"
-shortDescription: "AK-457 Yangın Kapısı Açıklaması"
+shortDescription: "Albatros Yangın Kapısı, sertifikalı üretimi, duman sızdırmaz gövde yapısı ve yangın dayanım seçenekleriyle güvenli tahliye senaryoları için geliştirilen yangın kapısı modelidir."
 size: "90 x 210 cm"
 color: "Beyaz"
-material: "Çelik + Yanmaz Boya"
+material: "Çelik Sac Gövde + Yangına Dayanımlı Elektrostatik Boya"
 price: 18000
 image: "/images/products-seo/albatros-yangin-kapisi.png"
 draft: false
 gallery: []
 features:
-  - "Ürünümüz sertifikalı üretilmektedir."
-  - "Ral 9010 renkte üretilmektedir."
-  - "EI60, EI90 ve EI120 dayanım isterlerine göre üretim yapılmaktadır."
-  - "Duman sızdırmaz özellikte imal edilmektedir."
-  - "Kendinden hidrolikli"
-  - "Panik bar girişli"
-  - "İsteğe göre kilitlenebilir üretilmektedir."
+  - "Sertifikalı üretim ve EI60 / EI90 / EI120 dayanım seçenekleri"
+  - "Duman sızdırmaz gövde yapısı ve kendinden hidrolikli kapanma sistemi"
+  - "Panik bar uyumu ve isteğe bağlı kilit seçeneği"
 ---
 
-Ürünümüz sertifikalı üretilmektedir.
-Ral 9010 renkte üretilmektedir.
-EI60, EI90 ve EI120 dayanım isterlerine göre üretim yapılmaktadır.
-Duman sızdırmaz özellikte imal edilmektedir.
-Kendinden hidrolikli
-Panik bar girişli
-İsteğe göre kilitlenebilir üretilmektedir.
+Albatros Yangın Kapısı, EI60, EI90 ve EI120 dayanım isterlerine uygun üretilebilen çelik sac gövdesi, duman sızdırmaz yapısı ve kendinden hidrolikli kapanma sistemiyle güvenli kaçış altyapısını destekler. Panik bar uyumu ve şartnameye uygun RAL renk uygulamaları sayesinde farklı proje ihtiyaçlarına uygun olarak hazırlanabilir.
