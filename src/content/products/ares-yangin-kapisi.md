@@ -6,6 +6,7 @@ shortDescription: "AK-453 Açıklama"
 size: "90 x 210 cm"
 color: "Kırmızı"
 material: "Metal + Yanmaz Boya"
+price: 45000
 image: "/images/products-seo/ares-yangin-kapisi.png"
 draft: false
 gallery: []

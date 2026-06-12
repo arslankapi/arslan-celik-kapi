@@ -6,6 +6,7 @@ shortDescription: "ARS-201 Çelik Kapı Açıklaması"
 size: "90*210 cm"
 color: "Meşe"
 material: "Çelik Gövde "
+price: 60000
 image: "/images/products-seo/nora-celik-kapi.jpg"
 draft: false
 gallery: []

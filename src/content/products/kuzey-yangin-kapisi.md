@@ -6,6 +6,7 @@ shortDescription: "AK-458 Yangın Kapısı Açıklaması"
 size: "90 x 210 cm"
 color: "Lacivert"
 material: "Çelik + Yanmaz Boya"
+price: 18000
 image: "/images/products-seo/kuzey-yangin-kapisi.png"
 draft: false
 gallery: []

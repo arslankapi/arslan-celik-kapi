@@ -6,6 +6,7 @@ shortDescription: "AK-456 Yangın Kapısı Açıklaması"
 size: "90 x 210 cm"
 color: "Kırmızı"
 material: "Çelik Sac + Yanmaz Boya "
+price: 18000
 image: "/images/products-seo/kizil-kalkan-yangin-kapisi.png"
 draft: false
 gallery: []

@@ -6,6 +6,7 @@ shortDescription: "Acil çıkış yönlendirmesi ve yoğun kullanım için tasar
 size: "100 x 210 cm"
 color: "Kırmızı"
 material: "Yanmaz Sac + Panic Bar Uyumlu"
+price: 65000
 image: "/images/products-seo/pergamon-celik-kapi.jpg"
 draft: false
 gallery: []

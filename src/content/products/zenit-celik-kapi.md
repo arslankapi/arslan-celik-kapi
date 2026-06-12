@@ -6,6 +6,7 @@ shortDescription: "ARS-302 Çelik Kapı Açıklaması"
 size: "90 x 210 cm"
 color: "Koyu Meşe"
 material: "Çelik"
+price: 55000
 image: "/images/products-seo/zenit-celik-kapi.jpg"
 draft: false
 gallery: []

@@ -6,6 +6,7 @@ shortDescription: "Acil çıkış yönlendirmesi ve yoğun kullanım için tasar
 size: "100 x 210 cm"
 color: "Kırmızı"
 material: "Yanmaz Sac + Panic Bar Uyumlu"
+price: 60000
 image: "/images/products-seo/hera-celik-kapi.jpg"
 draft: false
 gallery: []

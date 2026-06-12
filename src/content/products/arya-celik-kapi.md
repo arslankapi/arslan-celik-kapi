@@ -6,6 +6,7 @@ shortDescription: "ARS-102 Çelik Kapı Açıklaması"
 size: "90 x 210 cm"
 color: "Koyu Ceviz"
 material: "Çelik"
+price: 60000
 image: "/images/products-seo/arya-celik-kapi.jpg"
 draft: false
 gallery: []

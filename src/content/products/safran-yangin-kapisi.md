@@ -6,6 +6,7 @@ shortDescription: "AK-451 Açıklama"
 size: "90 x 210 cm"
 color: "Sarı"
 material: "Metal + Yanmaz Boya"
+price: 18000
 image: "/images/products-seo/safran-yangin-kapisi.jpg"
 draft: false
 gallery: []

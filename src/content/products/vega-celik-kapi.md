@@ -6,6 +6,7 @@ shortDescription: "ARS-208 Çelik Kapı Açıklaması"
 size: "90 x 210 cm"
 color: "Ceviz"
 material: "Çelik"
+price: 60000
 image: "/images/products-seo/vega-celik-kapi.jpg"
 draft: false
 gallery: []

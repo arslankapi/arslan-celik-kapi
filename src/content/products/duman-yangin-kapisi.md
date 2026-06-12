@@ -6,6 +6,7 @@ shortDescription: "AK-452 Açıklama"
 size: "90 x 210 cm"
 color: "Sarı"
 material: "Metal + Yanmaz Boya"
+price: 45000
 image: "/images/products-seo/duman-yangin-kapisi.jpg"
 draft: false
 gallery: []

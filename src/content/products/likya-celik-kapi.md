@@ -6,6 +6,7 @@ shortDescription: "ARS-108 ÜRÜN AÇIKLAMASI KISA AÇIKLAMA"
 size: "100 x 210 cm"
 color: "AÇIK MEŞE"
 material: "Yanmaz Sac + Panic Bar Uyumlu"
+price: 60000
 image: "/images/products-seo/likya-celik-kapi.jpg"
 draft: false
 gallery: []

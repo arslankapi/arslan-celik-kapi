@@ -6,6 +6,7 @@ shortDescription: "ARS-139 Çelik Kapı Açıklama"
 size: "90 x 210 cm"
 color: "Meşe"
 material: "Çelik"
+price: 60000
 image: "/images/products-seo/kanyon-celik-kapi.jpg"
 draft: false
 gallery: []

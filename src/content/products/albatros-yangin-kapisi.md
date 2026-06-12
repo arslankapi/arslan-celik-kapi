@@ -6,6 +6,7 @@ shortDescription: "AK-457 Yangın Kapısı Açıklaması"
 size: "90 x 210 cm"
 color: "Beyaz"
 material: "Çelik + Yanmaz Boya"
+price: 18000
 image: "/images/products-seo/albatros-yangin-kapisi.png"
 draft: false
 gallery: []

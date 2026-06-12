@@ -6,6 +6,7 @@ shortDescription: "ARS-101 Çelik Kapı Açıklaması"
 size: "90*210 cm"
 color: "Beyaz"
 material: "Çelik Gövde "
+price: 60000
 image: "/images/products-seo/alya-celik-kapi.jpg"
 draft: false
 gallery: []
