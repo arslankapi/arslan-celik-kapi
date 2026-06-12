@@ -1,20 +1,22 @@
-﻿---
-title: "Efes Çelik Kapı "
-modelCode: ARS-104
-category: celik-kapi
-shortDescription: Acil çıkış yönlendirmesi ve yoğun kullanım için tasarlanmış yangın kapısı.
-size: 100 x 210 cm
-color: Kırmızı
-material: Yanmaz Sac + Panic Bar Uyumlu
-image: /images/products-seo/efes-celik-kapi.jpg
-features:
-  - Panic bar donanımıyla tam uyum
-  - Kurumsal yapılara uygun güvenlik çizgisi
-  - Yüksek dayanımlı menteşe sistemi
-draft: false
 ---
-Ahşap görünümlü kayın kaplama üzerine ceviz renk çalışması yapılmıştır.  
+title: "Efes Çelik Kapı "
+modelCode: "ARS-104"
+category: "celik-kapi"
+shortDescription: "Acil çıkış yönlendirmesi ve yoğun kullanım için tasarlanmış yangın kapısı."
+size: "100 x 210 cm"
+color: "Kırmızı"
+material: "Yanmaz Sac + Panic Bar Uyumlu"
+image: "/images/products-seo/efes-celik-kapi.jpg"
+draft: false
+gallery: []
+features:
+  - "Panic bar donanımıyla tam uyum"
+  - "Kurumsal yapılara uygun güvenlik çizgisi"
+  - "Yüksek dayanımlı menteşe sistemi"
+---
 
-Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.  
+Ahşap görünümlü kayın kaplama üzerine ceviz renk çalışması yapılmıştır.
+
+Merkezi kilit sistemi 14 noktadan kilitlenebilir Kale Marka Kilit.
 
 İç kısmı lake.
